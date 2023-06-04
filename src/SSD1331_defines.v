@@ -1,4 +1,5 @@
 // Copied from Waveshare's official documentation.
+module SSD1331_defines();
 
 `define SSD1331_DRAW_LINE                       8'h21
 `define SSD1331_DRAW_RECTANGLE                  8'h22
@@ -42,3 +43,5 @@
 `define SSD1331_SET_PRECHARGE_VOLTAGE           8'hBB
 
 `define SSD1331_SET_V_VOLTAGE                   8'hBE
+
+endmodule
