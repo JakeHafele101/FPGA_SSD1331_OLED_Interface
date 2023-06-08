@@ -53,7 +53,7 @@ module Nbit_MOSI_SPI_Buffer (input i_SCK,
                 
                 o_START <= 1'b1; //start transmitting bytes
                 o_DC    <= i_DC[0]; //first D/C control
-                o_DATA  <= i_DATA[0]; //first byte
+                o_DATA  <= i_DATA[WIDTH-1:0]; //first byte
                 
                 s_byte_reg <= 1; //start at second MSB since loading up first byte
                 s_bit_reg  <= 0;  //start at transmitting bit 0, FIXME?
@@ -68,7 +68,7 @@ module Nbit_MOSI_SPI_Buffer (input i_SCK,
             begin
                 if (s_byte_reg >= N-1) //If transmitting last byte FIXME
                 begin
-                    o_DATA          <= s_data_reg[(s_byte_reg*WIDTH)-1:(s_byte_reg*WIDTH) - WIDTH - 1]; //load next byte
+                    o_DATA          <= s_data_reg[((s_byte_reg+1)*WIDTH)-1:((s_byte_reg+1)*WIDTH) - WIDTH]; //load next byte
                     o_DC            <= s_DC_reg[s_byte_reg];
                     o_MOSI_FINAL_BYTE <= 1'b1;
                     if (i_START == 1'b1) //if transmitting another set of bytes, stay in state, reassign, reset counts
@@ -82,7 +82,7 @@ module Nbit_MOSI_SPI_Buffer (input i_SCK,
                 end
                 else //if not last byte, load next one
                 begin
-                    o_DATA          <= s_data_reg[(s_byte_reg*WIDTH)-1:(s_byte_reg*WIDTH) - WIDTH - 1]; //load next byte
+                    o_DATA          <= s_data_reg[((s_byte_reg+1)*WIDTH)-1:((s_byte_reg+1)*WIDTH) - WIDTH]; //load next byte
                     o_DC            <= s_DC_reg[s_byte_reg];
                     o_MOSI_FINAL_BYTE <= 1'b0; //ensure final byte flag not raised
                     s_byte_reg      <= s_byte_reg + 1; //increment byte address
