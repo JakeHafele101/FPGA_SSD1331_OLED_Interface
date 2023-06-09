@@ -26,7 +26,6 @@ module Nbit_MOSI_SPI (input i_SCK,
             s_state_reg     <= idle;
             s_data_reg      <= 0;
             o_MOSI          <= 1'b0;
-            o_CS            <= 1'b1;
             o_DC            <= 1'b0;
             o_MOSI_FINAL_TX <= 1'b0;
             s_bit_reg       <= 0;
@@ -43,7 +42,6 @@ module Nbit_MOSI_SPI (input i_SCK,
                 s_state_reg <= transmit;
                 
                 o_MOSI <= i_DATA[WIDTH-1];
-                o_CS   <= 1'b0; //active low, will now take bits on posedge of SCK on slave side
                 o_DC   <= i_DC;
                 
                 s_bit_reg  <= 1; //start at second MSB
@@ -51,8 +49,6 @@ module Nbit_MOSI_SPI (input i_SCK,
                 s_data_reg <= i_DATA << 1;
                 
             end
-            else
-                o_CS = 1'b1;
         end
         transmit:
         begin

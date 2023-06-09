@@ -3,25 +3,8 @@ INFO: [VRFC 10-311] analyzing module Nbit_MOSI_SPI
 WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:4]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Nbit_MOSI_SPI_Buffer
-ERROR: [VRFC 10-3642] port 'i_DATA' must not be declared to be an array [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:4]
 WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:4]
 WARNING: [VRFC 10-3380] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:5]
 WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:8]
-ERROR: [VRFC 10-3161] cannot assign to memory 's_data_reg' directly [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:32]
-ERROR: [VRFC 10-395] cannot assign a packed type to an unpacked type [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:32]
-ERROR: [VRFC 10-9468] unpacked value/target cannot be used in an assignment [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:32]
-ERROR: [VRFC 10-3161] cannot assign to memory 's_data_reg' directly [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:51]
-ERROR: [VRFC 10-3155] cannot access memory 'i_DATA' directly [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:51]
-ERROR: [VRFC 10-902] incompatible unpacked dimensions in assignment [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:51]
-ERROR: [VRFC 10-9468] unpacked value/target cannot be used in an assignment [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:51]
-ERROR: [VRFC 10-3005] 'i_DATA' needs 2 dimensions [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:56]
-ERROR: [VRFC 10-395] cannot assign an unpacked type to a packed type [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:56]
-ERROR: [VRFC 10-9468] unpacked value/target cannot be used in an assignment [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:56]
-ERROR: [VRFC 10-3161] cannot assign to memory 's_data_reg' directly [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:77]
-ERROR: [VRFC 10-3155] cannot access memory 'i_DATA' directly [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:77]
-ERROR: [VRFC 10-902] incompatible unpacked dimensions in assignment [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:77]
-ERROR: [VRFC 10-9468] unpacked value/target cannot be used in an assignment [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:77]
-ERROR: [VRFC 10-3005] 'i_DATA' needs 2 dimensions [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:78]
-ERROR: [VRFC 10-395] cannot assign an unpacked type to a packed type [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:78]
-ERROR: [VRFC 10-9468] unpacked value/target cannot be used in an assignment [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:78]
-ERROR: [VRFC 10-8530] module 'Nbit_MOSI_SPI_Buffer' is ignored due to previous errors [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:2]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/test/Nbit_MOSI_SPI_Buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Nbit_MOSI_SPI_Buffer_tb
