@@ -2,7 +2,8 @@
 verilog xil_defaultlib  \
 "../../../../../src/Nbit_MOSI_SPI.v" \
 "../../../../../src/Nbit_MOSI_SPI_Buffer.v" \
-"../../../../../src/test/Nbit_MOSI_SPI_Buffer_tb.v" \
+"../../../../../src/Nbit_MOSI_SPI_Buffer_Combined.v" \
+"../../../../../src/test/Nbit_MOSI_SPI_Buffer_Combined_tb.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

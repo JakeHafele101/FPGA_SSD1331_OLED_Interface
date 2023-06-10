@@ -134,7 +134,7 @@ module Nbit_MOSI_SPI_Buffer_tb();
         i_N_transmit = 0;
         @(negedge i_SCK);
         i_START = 1'b0;
-        repeat(10) @(posedge o_MOSI_FINAL_TX);
+        repeat(10) @(negedge i_SCK);
         $stop;
     end
     

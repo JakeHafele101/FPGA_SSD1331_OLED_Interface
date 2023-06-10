@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Jun 10 14:48:44 2023
+# Process ID: 13136
+# Current directory: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1
+# Command line: vivado.exe -log Nbit_MOSI_SPI_Buffer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nbit_MOSI_SPI_Buffer.tcl
+# Log file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1/Nbit_MOSI_SPI_Buffer.vds
+# Journal file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1\vivado.jou
+# Running On: DESKTOP-SA1D2UB, OS: Windows, CPU Frequency: 3991 MHz, CPU Physical cores: 4, Host memory: 17058 MB
+#-----------------------------------------------------------
+source Nbit_MOSI_SPI_Buffer.tcl -notrace

@@ -1,0 +1,4 @@
+Running: xsim.dir/Nbit_MOSI_SPI_Buffer_Combined_tb_behav/xsimk.exe -simmode gui -wdb Nbit_MOSI_SPI_Buffer_Combined_tb_behav.wdb -simrunnum 0 -socket 57166
+Design successfully loaded
+Design Loading Memory Usage: 7184 KB (Peak: 7184 KB)
+Design Loading CPU Usage: 30 ms

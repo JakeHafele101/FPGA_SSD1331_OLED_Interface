@@ -1,7 +1,7 @@
-Running: xsim.dir/Nbit_MOSI_SPI_Buffer_tb_behav/xsimk.exe -simmode gui -wdb Nbit_MOSI_SPI_Buffer_tb_behav.wdb -simrunnum 0 -socket 51842
+Running: xsim.dir/Nbit_MOSI_SPI_Buffer_tb_behav/xsimk.exe -simmode gui -wdb Nbit_MOSI_SPI_Buffer_tb_behav.wdb -simrunnum 0 -socket 56794
 Design successfully loaded
-Design Loading Memory Usage: 7168 KB (Peak: 7168 KB)
-Design Loading CPU Usage: 61 ms
+Design Loading Memory Usage: 7192 KB (Peak: 7192 KB)
+Design Loading CPU Usage: 15 ms
 Simulation completed
 Simulation Memory Usage: 7752 KB (Peak: 7752 KB)
-Simulation CPU Usage: 61 ms
+Simulation CPU Usage: 93 ms
