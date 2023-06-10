@@ -4,7 +4,6 @@ Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'i_N_transmit' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/test/Nbit_MOSI_SPI_Buffer_tb.v:55]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v" Line 2. Module Nbit_MOSI_SPI_Buffer doesn't have a timescale but at least one module in design has a timescale.

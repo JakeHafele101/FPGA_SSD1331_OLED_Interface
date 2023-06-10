@@ -55,7 +55,6 @@ module Nbit_MOSI_SPI_Buffer_tb();
     .i_N_transmit(i_N_transmit),
     .o_DATA(s_BYTE), //byte to transmit
     .o_START(s_START), //when to start loading byte
-    .o_CS(o_CS),
     .o_DC(s_DC),
     .o_MOSI_FINAL_BYTE(s_MOSI_FINAL_BYTE)
     );
@@ -67,6 +66,7 @@ module Nbit_MOSI_SPI_Buffer_tb();
     .i_START(s_START),
     .i_DC(s_DC), 
     .o_MOSI(o_MOSI),
+    .o_CS(o_CS),
     .o_DC(o_DC),
     .o_MOSI_FINAL_TX(o_MOSI_FINAL_TX)
     );
@@ -94,22 +94,47 @@ module Nbit_MOSI_SPI_Buffer_tb();
         //No wait between
         i_START = 1'b1;
 
-        s_BYTE0 = 8'b00000001;
-        s_BYTE1 = 8'b00000010;
-        s_BYTE2 = 8'b00000100;
-        s_BYTE3 = 8'b00001000;
-        s_BYTE4 = 8'b00010000;
-        s_BYTE5 = 8'b00100000;
-        s_BYTE6 = 8'b01000000;
-        s_BYTE7 = 8'b10000000;
-
+        s_BYTE0 = 8'b11111110;
+        s_BYTE1 = 8'b11111101;
+        s_BYTE2 = 8'b11111011;
+        s_BYTE3 = 8'b11110111;
+        s_BYTE4 = 8'b11101111;
+        s_BYTE5 = 8'b11011111;
+        s_BYTE6 = 8'b10111111;
+        s_BYTE7 = 8'b01111111;
         i_DC = 8'b10101010;
         i_N_transmit = 8;
         @(negedge i_SCK);
         i_START = 1'b0;
+        repeat(i_N_transmit) @(posedge o_MOSI_FINAL_TX);
 
-        repeat(WIDTH*i_N_transmit + 10) @(negedge i_SCK);
+        i_START = 1'b1;
+        s_BYTE0 = 8'b00000011;
+        s_BYTE1 = 8'b00001100;
+        s_BYTE2 = 8'b00110000;
+        s_BYTE3 = 8'b11000000;
+        i_DC = 8'b00001100;
+        i_N_transmit = 4;
+        @(negedge i_SCK);
+        i_START = 1'b0;
+        repeat(i_N_transmit) @(posedge o_MOSI_FINAL_TX);
 
+        repeat(10) @(negedge i_SCK); //wait a bit...
+
+        i_START = 1'b1;
+        s_BYTE0 = 8'b00000011;
+        s_BYTE1 = 8'b00001100;
+        i_DC = 8'b00000010;
+        i_N_transmit = 2;
+        @(negedge i_SCK);
+        i_START = 1'b0;
+        repeat(i_N_transmit) @(posedge o_MOSI_FINAL_TX);
+
+        i_START = 1'b1;
+        i_N_transmit = 0;
+        @(negedge i_SCK);
+        i_START = 1'b0;
+        repeat(10) @(posedge o_MOSI_FINAL_TX);
         $stop;
     end
     
