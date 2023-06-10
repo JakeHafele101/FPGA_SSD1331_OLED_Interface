@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Nbit_MOSI_SPI_Buffer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nbit_MOSI_SPI_Buffer.tcl
+EAStep vivado -log Nbit_MOSI_SPI_Buffer_Combined.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nbit_MOSI_SPI_Buffer_Combined.tcl

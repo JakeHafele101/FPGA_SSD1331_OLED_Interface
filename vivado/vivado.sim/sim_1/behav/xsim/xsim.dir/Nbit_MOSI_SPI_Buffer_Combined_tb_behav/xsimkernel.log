@@ -2,3 +2,6 @@ Running: xsim.dir/Nbit_MOSI_SPI_Buffer_Combined_tb_behav/xsimk.exe -simmode gui 
 Design successfully loaded
 Design Loading Memory Usage: 7184 KB (Peak: 7184 KB)
 Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 7752 KB (Peak: 7752 KB)
+Simulation CPU Usage: 46 ms
