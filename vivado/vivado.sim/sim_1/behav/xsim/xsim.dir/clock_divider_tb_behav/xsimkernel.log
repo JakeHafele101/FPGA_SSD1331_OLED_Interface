@@ -2,3 +2,6 @@ Running: xsim.dir/clock_divider_tb_behav/xsimk.exe -simmode gui -wdb clock_divid
 Design successfully loaded
 Design Loading Memory Usage: 7164 KB (Peak: 7164 KB)
 Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 7684 KB (Peak: 7684 KB)
+Simulation CPU Usage: 61 ms
