@@ -1,4 +1,18 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Nbit_MOSI_SPI
+WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:4]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Nbit_MOSI_SPI_Buffer
+WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:4]
+WARNING: [VRFC 10-3380] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:5]
+WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Nbit_MOSI_SPI_Buffer_Combined
+WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:4]
+WARNING: [VRFC 10-3380] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:5]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OLED_interface
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clock_divider
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/test/clock_divider_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module clock_divider_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/test/OLED_interface_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OLED_interface_tb

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1686433465" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp">
   <File Type="PA-TCL" Name="Nbit_MOSI_SPI_Buffer_Combined.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Nbit_MOSI_SPI_Buffer_Combined_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Nbit_MOSI_SPI_Buffer_Combined_reports.tcl"/>
   <File Type="RDS-RDS" Name="Nbit_MOSI_SPI_Buffer_Combined.vds"/>
   <File Type="RDS-UTIL" Name="Nbit_MOSI_SPI_Buffer_Combined_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Nbit_MOSI_SPI_Buffer_Combined_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Nbit_MOSI_SPI_Buffer_Combined.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Nbit_MOSI_SPI_Buffer_Combined_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Nbit_MOSI_SPI_Buffer_Combined_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/Nbit_MOSI_SPI.v">
