@@ -68,20 +68,37 @@ module OLED_interface_tb();
     
     initial begin
         //initial setup
-        i_MODE = 2'b00;
-        i_START = 1'b0;
-        repeat(10) @(negedge i_CLK);
+        reset();
 
         //Turn on
-        i_MODE = 2'b00;
-        i_START = 1'b1;
-        @(negedge o_READY);
-        i_START = 1'b0;
-
-        @(posedge o_READY);
+        turnon();
+        turnon();
+        reset();
+        turnon();
         repeat(10) @(negedge i_CLK);
 
         $stop;
     end
+
+    task reset();
+        begin
+            i_MODE = 2'b00;
+            i_START = 1'b0;
+            i_RST = 1'b1;
+            @(negedge i_CLK);
+            i_RST = 1'b0;
+            @(negedge i_CLK);
+        end
+    endtask
+
+    task turnon();
+        begin
+            i_MODE = 2'b00;
+            i_START = 1'b1;
+            @(negedge o_READY);
+            i_START = 1'b0;
+            @(posedge o_READY);
+        end
+    endtask
     
 endmodule

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1686433465" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp">
-  <File Type="PA-TCL" Name="Nbit_MOSI_SPI_Buffer_Combined.tcl"/>
-  <File Type="REPORTS-TCL" Name="Nbit_MOSI_SPI_Buffer_Combined_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Nbit_MOSI_SPI_Buffer_Combined.vds"/>
-  <File Type="RDS-UTIL" Name="Nbit_MOSI_SPI_Buffer_Combined_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Nbit_MOSI_SPI_Buffer_Combined_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Nbit_MOSI_SPI_Buffer_Combined.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1686539367" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp">
+  <File Type="PA-TCL" Name="OLED_interface_synth.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="OLED_interface_synth_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="OLED_interface_synth_reports.tcl"/>
+  <File Type="RDS-RDS" Name="OLED_interface_synth.vds"/>
+  <File Type="RDS-UTIL" Name="OLED_interface_synth_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="OLED_interface_synth_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="OLED_interface_synth.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="OLED_interface_synth_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="OLED_interface_synth_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/Nbit_MOSI_SPI.v">
@@ -30,8 +33,14 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/SSD1331_defines.v">
+      <FileInfo SFType="VHeader">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/OLED_interface.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -39,7 +48,13 @@
     </File>
     <File Path="$PPRDIR/../src/clock_divider.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/OLED_interface_synth.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -47,7 +62,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Nbit_MOSI_SPI_Buffer_Combined"/>
+      <Option Name="TopModule" Val="OLED_interface_synth"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -60,6 +75,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../src/const/Basys3_Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

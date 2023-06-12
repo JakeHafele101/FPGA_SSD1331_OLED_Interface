@@ -1,0 +1,427 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Jun 11 22:09:30 2023
+# Process ID: 7228
+# Current directory: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1
+# Command line: vivado.exe -log OLED_interface_synth.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source OLED_interface_synth.tcl
+# Log file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1/OLED_interface_synth.vds
+# Journal file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1\vivado.jou
+# Running On: DESKTOP-SA1D2UB, OS: Windows, CPU Frequency: 3991 MHz, CPU Physical cores: 4, Host memory: 17058 MB
+#-----------------------------------------------------------
+source OLED_interface_synth.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.srcs/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.srcs/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top OLED_interface_synth -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6528
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-6901] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:4]
+WARNING: [Synth 8-6901] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:4]
+WARNING: [Synth 8-6901] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:4]
+WARNING: [Synth 8-6901] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:5]
+WARNING: [Synth 8-6901] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:8]
+INFO: [Synth 8-11241] undeclared symbol 's_start_mosi', assumed default net type 'wire' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:32]
+WARNING: [Synth 8-6901] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:4]
+WARNING: [Synth 8-6901] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:4]
+WARNING: [Synth 8-6901] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:5]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1205.539 ; gain = 408.555
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'OLED_interface_synth' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:2]
+INFO: [Synth 8-6157] synthesizing module 'OLED_interface' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:4]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter N bound to: 8 - type: integer 
+	Parameter SCLK_DIVIDER bound to: 20 - type: integer 
+	Parameter WAIT_3_US bound to: 20 - type: integer 
+	Parameter WAIT_100_MS bound to: 600000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Nbit_MOSI_SPI_Buffer_Combined' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:2]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter N bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Nbit_MOSI_SPI_Buffer' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:2]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter N bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Nbit_MOSI_SPI_Buffer' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Nbit_MOSI_SPI' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:2]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Nbit_MOSI_SPI' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Nbit_MOSI_SPI_Buffer_Combined' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:2]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v:23]
+	Parameter DVSR bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:111]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:95]
+INFO: [Synth 8-6155] done synthesizing module 'OLED_interface' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'OLED_interface_synth' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:2]
+WARNING: [Synth 8-7137] Register s_DC_reg_reg in module Nbit_MOSI_SPI_Buffer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:53]
+WARNING: [Synth 8-7137] Register s_N_transmit_reg_reg in module Nbit_MOSI_SPI_Buffer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:59]
+WARNING: [Synth 8-7137] Register s_MOSI_LSB_reg in module Nbit_MOSI_SPI has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:50]
+WARNING: [Synth 8-3917] design OLED_interface_synth has port JC[2] driven by constant 0
+WARNING: [Synth 8-7129] Port LED[15] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[14] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[13] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[12] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[11] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[10] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[15] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[14] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[13] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[12] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[11] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[10] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[9] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[8] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[7] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[6] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[5] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[4] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[3] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[2] in module OLED_interface_synth is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1298.230 ; gain = 501.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1298.230 ; gain = 501.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1298.230 ; gain = 501.246
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1298.230 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:117]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/FPGA_SSD1331_OLED_Interface/src/const/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/OLED_interface_synth_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/OLED_interface_synth_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1360.152 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1360.152 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 's_state_reg_reg' in module 'OLED_interface'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                             0000
+                turnon_1 |                              001 |                             0001
+                turnon_2 |                              010 |                             0010
+                turnon_3 |                              011 |                             0011
+                turnon_4 |                              100 |                             0100
+              color_spam |                              101 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 's_state_reg_reg' using encoding 'sequential' in module 'OLED_interface'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 3     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                5 Bit    Registers := 5     
+	                1 Bit    Registers := 15    
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 1     
+	   6 Input   64 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 1     
+	   6 Input   32 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 4     
+	   6 Input    8 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 6     
+	   6 Input    5 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 26    
+	   3 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design OLED_interface_synth has port JC[2] driven by constant 0
+WARNING: [Synth 8-7129] Port LED[15] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[14] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[13] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[12] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[11] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[10] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[15] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[14] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[13] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[12] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[11] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[10] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[9] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[8] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[7] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[6] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[5] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[4] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[3] in module OLED_interface_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[2] in module OLED_interface_synth is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    16|
+|3     |LUT1   |     3|
+|4     |LUT2   |    40|
+|5     |LUT3   |     8|
+|6     |LUT4   |    17|
+|7     |LUT5   |    12|
+|8     |LUT6   |    60|
+|9     |FDCE   |    95|
+|10    |FDPE   |     3|
+|11    |FDRE   |     3|
+|12    |IBUF   |     5|
+|13    |OBUF   |    18|
+|14    |OBUFT  |     6|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1360.152 ; gain = 501.246
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1360.152 ; gain = 563.168
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1360.152 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1360.152 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 9e68938
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 84 Warnings, 30 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1360.152 ; gain = 940.352
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1/OLED_interface_synth.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file OLED_interface_synth_utilization_synth.rpt -pb OLED_interface_synth_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 11 22:10:13 2023...

@@ -1,4 +1,6 @@
 
+`include "SSD1331_defines.v"
+
 module OLED_interface (input i_CLK,
                        input i_RST,
                        input [1:0] i_MODE,
@@ -11,7 +13,7 @@ module OLED_interface (input i_CLK,
                        output reg o_RES,     //OLED power reset, active low reset
                        output reg o_VCCEN,   //VCC enable, active high drives VCC
                        output reg o_PMODEN); //VDD logic voltage control. active high, drives PGND on schem
-    
+
     parameter WIDTH        = 8; //# of serial bits to transmit over MOSI, loaded from i_DATA
     parameter N            = 8; //# of bytes that can be loaded at once for MOSI
     parameter SCLK_DIVIDER = 20; //Minimum 150ns Period (or 6.66 MHz), divided 100 MHz down to 5MHz
@@ -26,11 +28,12 @@ module OLED_interface (input i_CLK,
                turnon_1 = 4'b0001,
                turnon_2 = 4'b0010,
                turnon_3 = 4'b0011,
-               turnon_4 = 4'b0100;
+               turnon_4 = 4'b0100,
+               color_spam = 4'b0101;
 
     //Mode selection
     localparam turnon = 2'b00, 
-               turnoff = 2'b01,
+               color = 2'b01,
                ascii = 2'b10, 
                shape = 2'b11;
     
@@ -110,6 +113,10 @@ module OLED_interface (input i_CLK,
                     begin
                         s_state_reg <= turnon_1;
                     end
+                    color:
+                    begin
+                        s_state_reg <= color_spam;
+                    end
                 endcase
             end
             else
@@ -169,6 +176,17 @@ module OLED_interface (input i_CLK,
                 end
             else //Otherwise, increment tick count
                 s_count_reg <= s_count_reg + 1;
+        end
+
+        color_spam:
+        begin
+            //Command, 0xAF, send one byte to buffer/MOSI
+            s_DATA[WIDTH-1:0] <= 8'hFF; //display ON command
+            s_DC[0] <= 1'b1; //Data command
+            s_N_transmit <= 1; //transmit 1 byte
+            s_buffer_start_reg <= 1'b1;
+
+            s_state_reg <= idle;
         end
 
     endcase

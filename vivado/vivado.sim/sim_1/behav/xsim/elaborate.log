@@ -6,11 +6,11 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v" Line 2. Module OLED_interface(SCLK_DIVIDER=1,WAIT_3_US=2,WAIT_100_MS=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v" Line 4. Module OLED_interface(SCLK_DIVIDER=1,WAIT_3_US=2,WAIT_100_MS=10) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v" Line 2. Module Nbit_MOSI_SPI_Buffer_Combined doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v" Line 2. Module Nbit_MOSI_SPI_Buffer doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v" Line 2. Module Nbit_MOSI_SPI doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v" Line 2. Module OLED_interface(SCLK_DIVIDER=1,WAIT_3_US=2,WAIT_100_MS=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v" Line 4. Module OLED_interface(SCLK_DIVIDER=1,WAIT_3_US=2,WAIT_100_MS=10) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v" Line 2. Module Nbit_MOSI_SPI_Buffer_Combined doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v" Line 2. Module Nbit_MOSI_SPI_Buffer doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v" Line 2. Module Nbit_MOSI_SPI doesn't have a timescale but at least one module in design has a timescale.

@@ -11,6 +11,7 @@ INFO: [VRFC 10-311] analyzing module Nbit_MOSI_SPI_Buffer_Combined
 WARNING: [VRFC 10-3380] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:4]
 WARNING: [VRFC 10-3380] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:5]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SSD1331_defines
 INFO: [VRFC 10-311] analyzing module OLED_interface
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clock_divider

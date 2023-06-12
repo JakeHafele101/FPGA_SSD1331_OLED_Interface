@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log Nbit_MOSI_SPI_Buffer_Combined.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nbit_MOSI_SPI_Buffer_Combined.tcl" );
+         "-log OLED_interface_synth.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source OLED_interface_synth.tcl" );
 
 
 

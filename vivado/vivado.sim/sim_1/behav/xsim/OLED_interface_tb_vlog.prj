@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  \
+verilog xil_defaultlib  --include "../../../../../src" \
 "../../../../../src/Nbit_MOSI_SPI.v" \
 "../../../../../src/Nbit_MOSI_SPI_Buffer.v" \
 "../../../../../src/Nbit_MOSI_SPI_Buffer_Combined.v" \
