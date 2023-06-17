@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {Project 1-19}  -string {{CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_tx_master_SPI.v'.}}  -suppress 
 set_msg_config  -id {Project 1-19}  -string {{CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Projects/FPGA_SSD1331_OLED_Interface/src/SSD1331_defines - Copy.v'.}}  -suppress 
 

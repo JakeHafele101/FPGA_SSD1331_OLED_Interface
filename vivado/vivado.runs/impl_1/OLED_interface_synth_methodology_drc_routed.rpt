@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Sun Jun 11 22:11:15 2023
+| Date         : Fri Jun 16 21:42:42 2023
 | Host         : DESKTOP-SA1D2UB running 64-bit major release  (build 9200)
 | Command      : report_methodology -file OLED_interface_synth_methodology_drc_routed.rpt -pb OLED_interface_synth_methodology_drc_routed.pb -rpx OLED_interface_synth_methodology_drc_routed.rpx
 | Design       : OLED_interface_synth
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 100
+             Violations found: 123
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 75         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 98         |
 | TIMING-18 | Warning          | Missing input or output delay | 25         |
 +-----------+------------------+-------------------------------+------------+
 
@@ -145,265 +145,380 @@ Related violations: <none>
 
 TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[6]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[7]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DC_reg/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_START_reg/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_DC_reg_reg[0]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_N_transmit_reg_reg[0]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_bit_reg_reg[0]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#30 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_bit_reg_reg[1]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DATA_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#31 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_bit_reg_reg[2]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_DC_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#32 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_byte_reg_reg[0]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_START_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#33 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_state_reg_reg/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_DC_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/o_READY_reg/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_DC_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#35 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/o_RES_reg/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_N_transmit_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#36 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/o_RES_reg_lopt_replica/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_N_transmit_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#37 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/o_VCCEN_reg/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_bit_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#38 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/o_VCCEN_reg_lopt_replica/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_bit_reg_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#39 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/o_VCCEN_reg_lopt_replica_2/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_bit_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#40 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/o_VCCEN_reg_lopt_replica_3/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_byte_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#41 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_DC_reg[0]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_byte_reg_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_N_transmit_reg[0]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_byte_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#43 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_buffer_start_reg_reg/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_data_reg_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#44 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[0]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_data_reg_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#45 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[10]/C is not reached by a timing clock
+The clock pin g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_state_reg_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#46 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[11]/C is not reached by a timing clock
+The clock pin g_OLED_interface/o_READY_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#47 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[12]/C is not reached by a timing clock
+The clock pin g_OLED_interface/o_RES_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#48 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[13]/C is not reached by a timing clock
+The clock pin g_OLED_interface/o_RES_reg_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#49 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[14]/C is not reached by a timing clock
+The clock pin g_OLED_interface/o_VCCEN_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#50 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[15]/C is not reached by a timing clock
+The clock pin g_OLED_interface/o_VCCEN_reg_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#51 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[16]/C is not reached by a timing clock
+The clock pin g_OLED_interface/o_VCCEN_reg_lopt_replica_2/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#52 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[17]/C is not reached by a timing clock
+The clock pin g_OLED_interface/o_VCCEN_reg_lopt_replica_3/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#53 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[18]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#54 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[19]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#55 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[1]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[20]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[21]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[22]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#59 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[23]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#60 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[24]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#61 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[25]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DATA_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#62 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[26]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DC_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#63 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[27]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_DC_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#64 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[28]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_N_transmit_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#65 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[29]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_N_transmit_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#66 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[2]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_buffer_start_reg_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#67 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[30]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#68 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[31]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#69 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[3]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#70 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[4]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#71 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[5]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#72 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[6]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#73 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[7]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#74 Critical Warning
 Non-clocked sequential cell  
-The clock pin g_OLED_interface/s_count_reg_reg[8]/C is not reached by a timing clock
+The clock pin g_OLED_interface/s_count_reg_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#75 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#76 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#77 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#78 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#79 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#80 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#81 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#82 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#83 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#84 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#85 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#86 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[27]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#87 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[28]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#88 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[29]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#89 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#90 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[30]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#91 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[31]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#92 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#93 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#94 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#95 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#96 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#97 Critical Warning
+Non-clocked sequential cell  
+The clock pin g_OLED_interface/s_count_reg_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#98 Critical Warning
 Non-clocked sequential cell  
 The clock pin g_OLED_interface/s_count_reg_reg[9]/C is not reached by a timing clock
 Related violations: <none>

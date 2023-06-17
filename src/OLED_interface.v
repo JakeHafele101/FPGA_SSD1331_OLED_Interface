@@ -5,6 +5,9 @@ module OLED_interface (input i_CLK,
                        input i_RST,
                        input [1:0] i_MODE,
                        input i_START,
+                       input [N_COLOR_BITS-1:0] i_TEXT_COLOR,
+                       input [N_COLOR_BITS-1:0] i_BACKGROUND_COLOR,
+                       input [NUM_COL*NUM_ROW - 1:0] i_PIXEL, //1 if text color, 0 if background color
                        output reg o_READY, //ready to take in i_MODE and i_START for command
                        output o_CS,
                        output o_MOSI,
@@ -22,7 +25,12 @@ module OLED_interface (input i_CLK,
     //If using SCLK, 5MHz clock, 200ns period
     parameter WAIT_3_US = 20; //Count up to X ticks to wait on 100MHz clock, only needs 15
     parameter WAIT_100_MS = 600000; //Needs 500000
-    
+
+    parameter NUM_COL = 96; //# of columns in OLED array
+    parameter NUM_ROW = 64; //# of rows in OLED array
+
+    parameter N_COLOR_BITS = 8;
+     
     //Internal states
     localparam idle = 4'b0000,
                turnon_1 = 4'b0001,
@@ -33,9 +41,7 @@ module OLED_interface (input i_CLK,
 
     //Mode selection
     localparam turnon = 2'b00, 
-               color = 2'b01,
-               ascii = 2'b10, 
-               shape = 2'b11;
+               color = 2'b01;
     
     //Internal signals
     reg [3:0] s_state_reg;  //state register
@@ -157,9 +163,9 @@ module OLED_interface (input i_CLK,
         begin
 
             //Command, 0xAF, send one byte to buffer/MOSI
-            s_DATA[WIDTH-1:0] <= 8'hAF; //display ON command
-            s_DC[0] <= 1'b0; //Write command
-            s_N_transmit <= 1; //transmit 1 byte
+            s_DATA[(WIDTH-1)+WIDTH*2:0] <= {8'h40, 8'hA0, 8'hAF}; //Display ON, set to 256 color display
+            s_DC[4:0] <= 5'b100; //Write command
+            s_N_transmit <= 5; //transmit 1 byte
             s_buffer_start_reg <= 1'b1;
 
             s_state_reg <= turnon_4;
@@ -181,7 +187,7 @@ module OLED_interface (input i_CLK,
         color_spam:
         begin
             //Command, 0xAF, send one byte to buffer/MOSI
-            s_DATA[WIDTH-1:0] <= 8'hFF; //display ON command
+            s_DATA[WIDTH-1:0] <= i_TEXT_COLOR; //Send white pixel
             s_DC[0] <= 1'b1; //Data command
             s_N_transmit <= 1; //transmit 1 byte
             s_buffer_start_reg <= 1'b1;
