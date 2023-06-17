@@ -61,11 +61,16 @@ module Nbit_MOSI_SPI (input i_SCK,
                 o_DC <= i_DC; //assign new D/C bit
                 o_MOSI_FINAL_TX <= 1'b0;
             end
-            
-            if (s_bit_reg >= WIDTH - 1) //If transmitting last bit of byte
+
+            if (s_bit_reg == WIDTH - 2) //If transmitting second to last bit of byte
+            begin
+                o_MOSI_FINAL_TX <= 1'b1; //flag indicating next bit is last tx
+                s_bit_reg       <= s_bit_reg + 1;
+            end
+            else if (s_bit_reg >= WIDTH - 1) //If transmitting last bit of byte
             begin
                 o_MOSI          <= s_MOSI_LSB;
-                o_MOSI_FINAL_TX <= 1'b1;
+                o_MOSI_FINAL_TX <= 1'b0;
                 if (i_START == 1'b1) //if transmitting another byte, stay in state but reset bit count
                 begin
                     s_bit_reg  <= 0;

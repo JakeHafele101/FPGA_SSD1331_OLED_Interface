@@ -20,15 +20,15 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     //Wires to outputs
     wire s_READY, s_CS, s_MOSI, s_SCK, s_DC, s_RES, s_VCCEN, s_PMODEN;
 
-    wire [7:0] s_TEXT_COLOR;
+    wire [7:0] s_background_color;
 
     OLED_interface #(.WIDTH(WIDTH), .N(N), .SCLK_DIVIDER(SCLK_DIVIDER), .WAIT_3_US(WAIT_3_US), .WAIT_100_MS(WAIT_100_MS)) g_OLED_interface
     (.i_CLK(CLK100MHZ),
     .i_RST(btnC),
     .i_MODE(s_MODE), //00 for start, 01 for color spam
     .i_START(btnU),
-    .i_TEXT_COLOR(s_TEXT_COLOR),
-    .i_BACKGROUND_COLOR(8'hFF),
+    .i_TEXT_COLOR(8'hFF),
+    .i_BACKGROUND_COLOR(s_background_color),
     .i_PIXEL(), //open
     .o_READY(s_READY),
     .o_CS(s_CS),
@@ -58,7 +58,7 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     assign JC[6] = s_VCCEN; //P17
     assign JC[7] = s_PMODEN; //R18
 
-    assign s_TEXT_COLOR = sw[15:8];
+    assign s_background_color = sw[15:8];
 
 
 endmodule

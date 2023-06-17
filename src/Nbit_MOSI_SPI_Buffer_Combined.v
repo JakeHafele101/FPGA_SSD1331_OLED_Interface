@@ -28,6 +28,7 @@ module Nbit_MOSI_SPI_Buffer_Combined (input i_SCK,
     .i_DC(i_DC),
     .i_START(i_START),
     .i_N_transmit(i_N_transmit),
+    .i_MOSI_FINAL_BIT(o_MOSI_FINAL_BIT),
     .o_DATA(s_BYTE), //byte to transmit
     .o_START(s_start_mosi), //when to start loading byte
     .o_DC(s_DC_mosi),
