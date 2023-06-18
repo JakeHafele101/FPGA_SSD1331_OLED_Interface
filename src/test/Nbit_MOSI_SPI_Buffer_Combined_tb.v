@@ -92,9 +92,7 @@ module Nbit_MOSI_SPI_Buffer_Combined_tb();
         s_BYTE7      = 8'b01111111;
         i_DC         = 8'b10101010;
         i_N_transmit = 8;
-        @(negedge i_SCK);
-        i_START = 1'b0;
-        repeat(i_N_transmit) @(posedge o_MOSI_FINAL_BIT);
+        @(posedge o_MOSI_FINAL_BYTE);
         
         i_START      = 1'b1;
         s_BYTE0      = 8'b00000011;
@@ -103,26 +101,21 @@ module Nbit_MOSI_SPI_Buffer_Combined_tb();
         s_BYTE3      = 8'b11000000;
         i_DC         = 8'b00001100;
         i_N_transmit = 4;
-        @(negedge i_SCK);
-        i_START = 1'b0;
-        repeat(i_N_transmit) @(posedge o_MOSI_FINAL_BIT);
+        @(posedge o_MOSI_FINAL_BYTE);
+        i_START      = 1'b0;
         
-        repeat(10) @(negedge i_SCK); //wait a bit...
+        repeat(30) @(negedge i_SCK); //wait a bit...
         
         i_START      = 1'b1;
         s_BYTE0      = 8'b00000011;
         s_BYTE1      = 8'b00001100;
         i_DC         = 8'b00000010;
         i_N_transmit = 2;
-        @(negedge i_SCK);
-        i_START = 1'b0;
-        repeat(i_N_transmit) @(posedge o_MOSI_FINAL_BIT);
+        @(posedge o_MOSI_FINAL_BYTE);
         
         i_START      = 1'b1;
         i_N_transmit = 0;
-        @(negedge i_SCK);
-        i_START = 1'b0;
-        repeat(10) @(negedge i_SCK);
+        repeat(30) @(negedge i_SCK); //wait a bit...
         $stop;
     end
     

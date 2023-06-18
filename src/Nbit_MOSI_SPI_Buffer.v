@@ -43,33 +43,39 @@ module Nbit_MOSI_SPI_Buffer (input i_SCK,
     case(s_state_reg)
         idle:
         begin
-            if(o_MOSI_FINAL_BYTE == 1'b0 || (o_MOSI_FINAL_BYTE == 1'b1 && i_MOSI_FINAL_BIT))
+            o_MOSI_FINAL_BYTE <= 1'b0;
+            if (i_START && (i_N_transmit > 0))
             begin
-                o_MOSI_FINAL_BYTE <= 1'b0;
-                if (i_START && (i_N_transmit > 0))
-                begin
-                    s_state_reg <= transmit;
-                    
-                    s_data_reg <= i_DATA >> 8; //load all bytes to internal reg
-                    s_DC_reg   <= i_DC; //load all D/C commands to internal reg
-                    
-                    o_START <= 1'b1; //start transmitting bytes
-                    o_DC    <= i_DC[0]; //first D/C control
-                    o_DATA  <= i_DATA[WIDTH-1:0]; //first byte
-                    
-                    s_N_transmit_reg <= i_N_transmit;
-                    s_byte_reg <= 1; //start at second MSB since loading up first byte
-                end
+                s_state_reg <= transmit;
+                
+                s_data_reg <= i_DATA >> 8; //load all bytes to internal reg
+                s_DC_reg   <= i_DC; //load all D/C commands to internal reg
+                
+                o_START <= 1'b1; //start transmitting bytes
+                o_DC    <= i_DC[0]; //first D/C control
+                o_DATA  <= i_DATA[WIDTH-1:0]; //first byte
+                
+                s_N_transmit_reg <= i_N_transmit;
+                s_byte_reg <= 1; //start at second MSB since loading up first byte
             end
         end
         transmit:
         begin            
-            if (i_MOSI_FINAL_BIT) //if on second to last bit of byte in MOSI, update Nbit_MOSI_SP
+            if (i_MOSI_FINAL_BIT == 1'b1) //if on second to last bit of byte in MOSI, update Nbit_MOSI_SP
             begin
-                if (s_byte_reg >= s_N_transmit_reg) //If transmitting last byte
+
+                if (s_byte_reg == 0) //If transmitting first byte
+                begin
+                    o_MOSI_FINAL_BYTE <= 1'b0;
+                end
+                else if (s_byte_reg == s_N_transmit_reg - 1) //If transmitting last byte
                 begin
                     o_MOSI_FINAL_BYTE <= 1'b1;
-                    if (i_START == 1'b1) //if transmitting another set of bytes, stay in state, reassign, reset counts
+                end
+
+                if(s_byte_reg >= s_N_transmit_reg) //If on last byte
+                begin
+                    if (i_START == 1'b1 && (i_N_transmit > 0)) //if transmitting another set of bytes, stay in state, reassign, reset counts
                     begin
                         s_state_reg <= idle;
                         
@@ -87,20 +93,17 @@ module Nbit_MOSI_SPI_Buffer (input i_SCK,
                         s_state_reg <= idle;
                         o_START <= 1'b0; //stop transmitting byte
                     end
+
+                    o_MOSI_FINAL_BYTE <= 1'b0;
                 end
                 else //if not last byte, load next one
                 begin
                     o_DATA          <= s_data_reg[WIDTH-1:0]; //load next byte
                     o_DC            <= s_DC_reg[s_byte_reg];
-                    o_MOSI_FINAL_BYTE <= 1'b0; //ensure final byte flag not raised
                     s_byte_reg      <= s_byte_reg + 1; //increment byte address
                 end
                 
                 s_data_reg <= s_data_reg >> 8; //Shift right 8 bits, so next byte can be loaded
-            end
-            else
-            begin
-                o_MOSI_FINAL_BYTE <= 1'b0; //ensure final byte flag not raised
             end
 
         end
