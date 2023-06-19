@@ -43,21 +43,32 @@ module Nbit_MOSI_SPI_Buffer (input i_SCK,
     case(s_state_reg)
         idle:
         begin
-            o_MOSI_FINAL_BYTE <= 1'b0;
-            if (i_START && (i_N_transmit > 0))
+            if(i_START == 1'b1)
             begin
-                s_state_reg <= transmit;
+                if (i_N_transmit == 1)
+                    o_MOSI_FINAL_BYTE <= 1'b1;
+                else
+                    o_MOSI_FINAL_BYTE <= 1'b0;
                 
-                s_data_reg <= i_DATA >> 8; //load all bytes to internal reg
-                s_DC_reg   <= i_DC; //load all D/C commands to internal reg
-                
-                o_START <= 1'b1; //start transmitting bytes
-                o_DC    <= i_DC[0]; //first D/C control
-                o_DATA  <= i_DATA[WIDTH-1:0]; //first byte
-                
-                s_N_transmit_reg <= i_N_transmit;
-                s_byte_reg <= 1; //start at second MSB since loading up first byte
+                if (i_N_transmit > 0)
+                begin
+                    s_state_reg <= transmit;
+                    
+                    s_data_reg <= i_DATA >> 8; //load all bytes to internal reg
+                    s_DC_reg   <= i_DC; //load all D/C commands to internal reg
+                    
+                    o_START <= 1'b1; //start transmitting bytes
+                    o_DC    <= i_DC[0]; //first D/C control
+                    o_DATA  <= i_DATA[WIDTH-1:0]; //first byte
+                    
+                    s_N_transmit_reg <= i_N_transmit;
+                    s_byte_reg <= 1; //start at second MSB since loading up first byte
+
+                end
             end
+            else
+                o_MOSI_FINAL_BYTE <= 1'b0;
+
         end
         transmit:
         begin            
@@ -93,8 +104,6 @@ module Nbit_MOSI_SPI_Buffer (input i_SCK,
                         s_state_reg <= idle;
                         o_START <= 1'b0; //stop transmitting byte
                     end
-
-                    o_MOSI_FINAL_BYTE <= 1'b0;
                 end
                 else //if not last byte, load next one
                 begin

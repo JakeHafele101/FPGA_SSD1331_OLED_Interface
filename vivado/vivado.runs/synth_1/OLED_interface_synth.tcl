@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 set_msg_config  -id {Project 1-19}  -string {{CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_tx_master_SPI.v'.}}  -suppress 
 set_msg_config  -id {Project 1-19}  -string {{CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Projects/FPGA_SSD1331_OLED_Interface/src/SSD1331_defines - Copy.v'.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -93,6 +95,7 @@ read_verilog -library xil_defaultlib {
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v
+  C:/Projects/FPGA_SSD1331_OLED_Interface/src/button_tick_latch.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v
 }

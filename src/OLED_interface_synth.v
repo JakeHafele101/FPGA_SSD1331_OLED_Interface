@@ -2,7 +2,7 @@
 module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5MHz
                        input [15:0] sw, //determines MODE
                        input btnC, //reset
-                       input btnU, //i_START
+                       input btnU, btnD, //i_START
                        output [15:0] LED, //indicators for outputs to PMOD
                        output [7:0] JC //OLED PMOD Port
                        );
@@ -14,22 +14,41 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     parameter WAIT_3_US = 20; 
     parameter WAIT_100_MS = 600000;
 
+    parameter NUM_COL = 96; //# of columns in OLED array
+    parameter NUM_ROW = 64; //# of rows in OLED array
+    
+    parameter N_COLOR_BITS = 8;
+
     //Wires to inputs
     wire [1:0] s_MODE;
+    wire s_TICK, s_START;
 
     //Wires to outputs
     wire s_READY, s_CS, s_MOSI, s_SCK, s_DC, s_RES, s_VCCEN, s_PMODEN;
 
     wire [7:0] s_background_color;
 
-    OLED_interface #(.WIDTH(WIDTH), .N(N), .SCLK_DIVIDER(SCLK_DIVIDER), .WAIT_3_US(WAIT_3_US), .WAIT_100_MS(WAIT_100_MS)) g_OLED_interface
+    wire [NUM_COL*NUM_ROW - 1:0] s_PIXEL;
+
+    OLED_interface 
+    #(.WIDTH(WIDTH), 
+    .N(N), 
+    .SCLK_DIVIDER(SCLK_DIVIDER), 
+    .WAIT_3_US(WAIT_3_US), 
+    .WAIT_100_MS(WAIT_100_MS),
+    .NUM_COL(NUM_COL),
+    .NUM_ROW(NUM_ROW),
+    .N_COLOR_BITS(N_COLOR_BITS)
+    ) 
+
+    g_OLED_interface
     (.i_CLK(CLK100MHZ),
     .i_RST(btnC),
     .i_MODE(s_MODE), //00 for start, 01 for color spam
-    .i_START(btnU),
+    .i_START(s_START),
     .i_TEXT_COLOR(8'hFF),
     .i_BACKGROUND_COLOR(s_background_color),
-    .i_PIXEL(), //open
+    .i_PIXEL(s_PIXEL), 
     .o_READY(s_READY),
     .o_CS(s_CS),
     .o_MOSI(s_MOSI),
@@ -39,6 +58,15 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     .o_VCCEN(s_VCCEN),
     .o_PMODEN(s_PMODEN)
     );
+
+    button_tick_latch g_button_tick_latch
+    (.i_CLK(s_SCK),
+    .i_RST(btnC),
+    .i_BTN(btnU),
+    .i_TICK(s_TICK)
+    );
+
+    assign s_START = s_TICK | btnD;
 
     //Sets Mode
     /*
@@ -60,5 +88,6 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
 
     assign s_background_color = sw[15:8];
 
+    assign s_PIXEL = 0;
 
 endmodule

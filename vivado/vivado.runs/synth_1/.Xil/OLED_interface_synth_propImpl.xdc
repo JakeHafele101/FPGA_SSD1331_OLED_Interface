@@ -127,8 +127,6 @@ set_property src_info {type:XDC file:1 line:118 export:INPUT save:INPUT read:REA
 set_property IOSTANDARD LVCMOS33 [get_ports btnR]
 set_property src_info {type:XDC file:1 line:119 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN U17 [get_ports btnD]
-set_property src_info {type:XDC file:1 line:120 export:INPUT save:INPUT read:READ} [current_design]
-set_property IOSTANDARD LVCMOS33 [get_ports btnD]
 set_property src_info {type:XDC file:1 line:182 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN K17 [get_ports {JC[0]}]
 set_property src_info {type:XDC file:1 line:185 export:INPUT save:INPUT read:READ} [current_design]

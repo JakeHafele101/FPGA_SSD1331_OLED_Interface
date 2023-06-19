@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date                      : Sat Jun 17 10:29:24 2023
+| Date                      : Sun Jun 18 21:58:12 2023
 | Host                      : DESKTOP-SA1D2UB running 64-bit major release  (build 9200)
 | Command                   : report_io -file OLED_interface_synth_io_placed.rpt
 | Design                    : OLED_interface_synth
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            43 |
+|            44 |
 +---------------+
 
 
@@ -232,7 +232,7 @@ Table of Contents
 | U14        | LED[6]      | High Range | IO_25_14                     | OUTPUT        | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U15        | LED[5]      | High Range | IO_L23P_T3_A03_D19_14        | OUTPUT        | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U16        | LED[0]      | High Range | IO_L23N_T3_A02_D18_14        | OUTPUT        | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| U17        |             | High Range | IO_L18P_T2_A12_D28_14        | User IO       |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| U17        | btnD        | High Range | IO_L18P_T2_A12_D28_14        | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U18        | btnC        | High Range | IO_L18N_T2_A11_D27_14        | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U19        | LED[2]      | High Range | IO_L15P_T2_DQS_RDWR_B_14     | OUTPUT        | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V1         |             | High Range | VCCO_34                      | VCCO          |             |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
