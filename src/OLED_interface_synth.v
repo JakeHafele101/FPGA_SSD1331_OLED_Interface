@@ -15,7 +15,7 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     parameter WAIT_100_MS = 600000;
 
     parameter NUM_COL = 96; //# of columns in OLED array
-    parameter NUM_ROW = 64; //# of rows in OLED array
+    parameter NUM_ROW = 3; //# of rows in OLED array
     
     parameter N_COLOR_BITS = 8;
 
