@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Jul  4 17:16:47 2023
-# Process ID: 12344
+# Start of session at: Tue Jul  4 22:43:34 2023
+# Process ID: 21372
 # Current directory: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1
 # Command line: vivado.exe -log OLED_interface_synth.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source OLED_interface_synth.tcl
 # Log file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1/OLED_interface_synth.vds
@@ -23,7 +23,7 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 8320
+INFO: [Synth 8-7075] Helper process launched with PID 15088
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 WARNING: [Synth 8-6901] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:4]
 WARNING: [Synth 8-6901] identifier 'WIDTH' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:4]
@@ -36,10 +36,10 @@ WARNING: [Synth 8-6901] identifier 'N' is used before its declaration [C:/Projec
 WARNING: [Synth 8-6901] identifier 'N' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:5]
 WARNING: [Synth 8-6901] identifier 'N_COLOR_BITS' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:8]
 WARNING: [Synth 8-6901] identifier 'N_COLOR_BITS' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:9]
-WARNING: [Synth 8-6901] identifier 'NUM_COL' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:10]
-WARNING: [Synth 8-6901] identifier 'NUM_ROW' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:10]
+WARNING: [Synth 8-6901] identifier 'ASCII_COL_SIZE' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:10]
+WARNING: [Synth 8-6901] identifier 'ASCII_ROW_SIZE' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:10]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1205.121 ; gain = 408.605
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1205.133 ; gain = 407.941
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'OLED_interface_synth' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:2]
 INFO: [Synth 8-6157] synthesizing module 'OLED_interface' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:4]
@@ -48,8 +48,10 @@ INFO: [Synth 8-6157] synthesizing module 'OLED_interface' [C:/Projects/FPGA_SSD1
 	Parameter SCLK_DIVIDER bound to: 20 - type: integer 
 	Parameter WAIT_3_US bound to: 20 - type: integer 
 	Parameter WAIT_100_MS bound to: 600000 - type: integer 
-	Parameter NUM_COL bound to: 8 - type: integer 
-	Parameter NUM_ROW bound to: 8 - type: integer 
+	Parameter NUM_COL bound to: 96 - type: integer 
+	Parameter NUM_ROW bound to: 64 - type: integer 
+	Parameter ASCII_COL_SIZE bound to: 8 - type: integer 
+	Parameter ASCII_ROW_SIZE bound to: 8 - type: integer 
 	Parameter N_COLOR_BITS bound to: 8 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'Nbit_MOSI_SPI_Buffer_Combined' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v:2]
 	Parameter WIDTH bound to: 8 - type: integer 
@@ -65,12 +67,12 @@ INFO: [Synth 8-6155] done synthesizing module 'Nbit_MOSI_SPI_Buffer_Combined' (0
 INFO: [Synth 8-6157] synthesizing module 'clock_divider' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v:23]
 	Parameter DVSR bound to: 20 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:149]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:128]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:156]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:135]
 INFO: [Synth 8-6155] done synthesizing module 'OLED_interface' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:4]
-WARNING: [Synth 8-7071] port 'o_MOSI_FINAL_BIT' of module 'OLED_interface' is unconnected for instance 'g_OLED_interface' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:44]
-WARNING: [Synth 8-7071] port 'o_MOSI_FINAL_BYTE' of module 'OLED_interface' is unconnected for instance 'g_OLED_interface' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:44]
-WARNING: [Synth 8-7023] instance 'g_OLED_interface' of module 'OLED_interface' has 17 connections declared, but only 15 given [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:44]
+WARNING: [Synth 8-7071] port 'o_MOSI_FINAL_BIT' of module 'OLED_interface' is unconnected for instance 'g_OLED_interface' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:53]
+WARNING: [Synth 8-7071] port 'o_MOSI_FINAL_BYTE' of module 'OLED_interface' is unconnected for instance 'g_OLED_interface' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:53]
+WARNING: [Synth 8-7023] instance 'g_OLED_interface' of module 'OLED_interface' has 17 connections declared, but only 15 given [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v:53]
 INFO: [Synth 8-6157] synthesizing module 'button_tick_latch' [C:/Projects/FPGA_SSD1331_OLED_Interface/src/button_tick_latch.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Projects/FPGA_SSD1331_OLED_Interface/src/button_tick_latch.v:47]
 INFO: [Synth 8-6155] done synthesizing module 'button_tick_latch' (0#1) [C:/Projects/FPGA_SSD1331_OLED_Interface/src/button_tick_latch.v:23]
@@ -78,8 +80,6 @@ INFO: [Synth 8-6155] done synthesizing module 'OLED_interface_synth' (0#1) [C:/P
 WARNING: [Synth 8-7137] Register s_DC_reg_reg in module Nbit_MOSI_SPI_Buffer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:58]
 WARNING: [Synth 8-7137] Register s_N_transmit_reg_reg in module Nbit_MOSI_SPI_Buffer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v:64]
 WARNING: [Synth 8-7137] Register s_MOSI_LSB_reg in module Nbit_MOSI_SPI has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI.v:50]
-WARNING: [Synth 8-6014] Unused sequential element s_ASCII_col_reg_reg was removed.  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:116]
-WARNING: [Synth 8-6014] Unused sequential element s_ASCII_row_reg_reg was removed.  [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:117]
 WARNING: [Synth 8-3917] design OLED_interface_synth has port JA[2] driven by constant 0
 WARNING: [Synth 8-7129] Port LED[15] in module OLED_interface_synth is either unconnected or has no load
 WARNING: [Synth 8-7129] Port LED[14] in module OLED_interface_synth is either unconnected or has no load
@@ -94,18 +94,18 @@ WARNING: [Synth 8-7129] Port sw[4] in module OLED_interface_synth is either unco
 WARNING: [Synth 8-7129] Port sw[3] in module OLED_interface_synth is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module OLED_interface_synth is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1299.457 ; gain = 502.941
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1299.551 ; gain = 502.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1299.457 ; gain = 502.941
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1299.551 ; gain = 502.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1299.457 ; gain = 502.941
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1299.551 ; gain = 502.359
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1299.457 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1299.551 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -248,45 +248,31 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/OLED_interface_synth_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1403.621 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1363.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1403.621 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1363.586 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 's_state_reg_reg' in module 'OLED_interface'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'button_tick_latch'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    idle |                              000 |                             0000
-                turnon_1 |                              001 |                             0001
-                turnon_2 |                              010 |                             0010
-                turnon_3 |                              011 |                             0011
-                turnon_4 |                              100 |                             0100
-           fill_screen_1 |                              101 |                             0101
-         pixel_display_1 |                              110 |                             0110
-         pixel_display_2 |                              111 |                             0111
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 's_state_reg_reg' using encoding 'sequential' in module 'OLED_interface'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -297,7 +283,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 's_state_reg_reg' using enc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'button_tick_latch'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -305,33 +291,37 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   32 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 2     
 	   2 Input    5 Bit       Adders := 2     
 +---Registers : 
 	               64 Bit    Registers := 2     
 	               32 Bit    Registers := 2     
-	                8 Bit    Registers := 6     
+	                8 Bit    Registers := 8     
 	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 16    
 +---Muxes : 
-	   2 Input   64 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 3     
 	   8 Input   64 Bit        Muxes := 2     
-	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 4     
 	   8 Input   32 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 7     
-	   8 Input    8 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 10    
+	   8 Input    8 Bit        Muxes := 4     
+	   3 Input    8 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 5     
 	   8 Input    5 Bit        Muxes := 1     
-	   8 Input    3 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   8 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 1     
-	   4 Input    3 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 29    
+	   2 Input    1 Bit        Muxes := 44    
 	   3 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 14    
 	   4 Input    1 Bit        Muxes := 5     
 	  64 Input    1 Bit        Muxes := 1     
-	   8 Input    1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -362,25 +352,25 @@ WARNING: [Synth 8-7129] Port sw[4] in module OLED_interface_synth is either unco
 WARNING: [Synth 8-7129] Port sw[3] in module OLED_interface_synth is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module OLED_interface_synth is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -398,37 +388,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -447,12 +437,12 @@ Report Cell Usage:
 |1     |BUFG   |     2|
 |2     |CARRY4 |    27|
 |3     |LUT1   |     2|
-|4     |LUT2   |    49|
-|5     |LUT3   |    34|
-|6     |LUT4   |    37|
-|7     |LUT5   |    29|
-|8     |LUT6   |    86|
-|9     |FDCE   |   170|
+|4     |LUT2   |    64|
+|5     |LUT3   |    57|
+|6     |LUT4   |    28|
+|7     |LUT5   |    38|
+|8     |LUT6   |   107|
+|9     |FDCE   |   213|
 |10    |FDPE   |     3|
 |11    |FDRE   |     5|
 |12    |IBUF   |    14|
@@ -460,27 +450,27 @@ Report Cell Usage:
 |14    |OBUFT  |     6|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1403.621 ; gain = 502.941
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1403.621 ; gain = 607.105
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1363.586 ; gain = 502.359
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1363.586 ; gain = 566.395
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1403.621 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1363.586 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 27 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1403.621 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1363.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: d5dced2b
+Synth Design complete, checksum: 21cde366
 INFO: [Common 17-83] Releasing license: Synthesis
-45 Infos, 91 Warnings, 44 Critical Warnings and 0 Errors encountered.
+43 Infos, 89 Warnings, 44 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1403.621 ; gain = 984.441
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1363.586 ; gain = 944.410
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/synth_1/OLED_interface_synth.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file OLED_interface_synth_utilization_synth.rpt -pb OLED_interface_synth_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jul  4 17:17:30 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Jul  4 22:44:18 2023...

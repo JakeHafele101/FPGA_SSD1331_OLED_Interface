@@ -36,7 +36,7 @@ module OLED_interface (input i_CLK,
     parameter [7:0] NUM_ASCII_COL  = NUM_COL / ASCII_COL_SIZE; //# of cols of ASCII chars (12 Default)
     parameter [7:0] NUM_ASCII_ROW  = NUM_ROW / ASCII_ROW_SIZE; //# of rows of ASCII chars (8 Default)
     
-    parameter N_COLOR_BITS = 8;
+    parameter N_COLOR_BITS = WIDTH;
     
     //Internal states
     localparam idle = 4'b0000,
@@ -212,7 +212,7 @@ module OLED_interface (input i_CLK,
         begin
             
             //Command, 0xAF, send one byte to buffer/MOSI
-            s_DATA[(WIDTH-1)+WIDTH*2:0] <= {8'h60, 8'hA0, 8'hAF}; //Display ON, set to 256 color display, odd even COM split, Scan from COM63 to COM0
+            s_DATA[(WIDTH-1)+WIDTH*2:0] <= {8'h20, 8'hA0, 8'hAF}; //Display ON, set to 256 color display, odd even COM split, Scan from COM63 to COM0
             s_DC[2:0]                   <= 3'b000; //Write command
             s_N_transmit                <= 3; //transmit 3 bytes
             s_buffer_start_reg          <= 1'b1;
@@ -263,21 +263,22 @@ module OLED_interface (input i_CLK,
             
                     if (s_PIXEL_COUNT_reg >= ASCII_COL_SIZE * ASCII_ROW_SIZE) //If transmitted all bytes in ASCII char
                     begin
-                        if (s_ASCII_row_reg >= NUM_ASCII_ROW) //if sent all bytes in ASCII, leave
+                        if ((s_ASCII_row_reg >= NUM_ASCII_ROW - 1) && (s_ASCII_col_reg >= NUM_ASCII_COL - 1)) //if sent all bytes in ASCII, leave
                         begin
-                            s_state_reg        <= idle;
+                            s_state_reg <= idle;
                         end
                         else if (s_ASCII_col_reg >= NUM_ASCII_COL - 1) //If on last col ASCII, set to col 0 and increment row
                         begin
                             s_ASCII_col_reg <= 0;
                             s_ASCII_row_reg <= s_ASCII_row_reg + 1;
+                            s_state_reg <= pixel_display_1; //reset start/end row/column addresses~
                         end
                         else //Otherwise, stay in same row and increment col
                         begin
                             s_ASCII_col_reg <= s_ASCII_col_reg + 1;
+                            s_state_reg <= pixel_display_1; //reset start/end row/column addresses
                         end
                         
-                        s_state_reg <= pixel_display_1; //reset start/end row/column addresses
                         s_buffer_start_reg <= 1'b0;
                     end
                     else

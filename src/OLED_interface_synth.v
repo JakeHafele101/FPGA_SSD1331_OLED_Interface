@@ -14,8 +14,15 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     parameter WAIT_3_US = 20; 
     parameter WAIT_100_MS = 600000;
 
-    parameter NUM_COL = 8; //# of columns in OLED array
-    parameter NUM_ROW = 8; //# of rows in OLED array
+    parameter NUM_COL = 96; //# of columns in OLED array
+    parameter NUM_ROW = 64; //# of rows in OLED array
+
+    // parameter NUM_COL = 8; //# of columns in OLED array
+    // parameter NUM_ROW = 8; //# of rows in OLED array
+
+    parameter ASCII_COL_SIZE = 8; //Number of x bits of ASCII char
+    parameter ASCII_ROW_SIZE = 8; //Number of y bits of ASCII char
+
 
     parameter N_COLOR_BITS = 8;
 
@@ -26,9 +33,9 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     //Wires to outputs
     wire s_READY, s_CS, s_MOSI, s_SCK, s_DC, s_RES, s_VCCEN, s_PMODEN;
 
-    wire [7:0] s_background_color;
+    wire [WIDTH-1:0] s_background_color;
 
-    wire [NUM_COL*NUM_ROW - 1:0] s_PIXEL;
+    wire [ASCII_COL_SIZE * ASCII_ROW_SIZE - 1:0] s_PIXEL;
 
     OLED_interface 
     #(.WIDTH(WIDTH), 
@@ -38,6 +45,8 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     .WAIT_100_MS(WAIT_100_MS),
     .NUM_COL(NUM_COL),
     .NUM_ROW(NUM_ROW),
+    .ASCII_COL_SIZE(ASCII_COL_SIZE),
+    .ASCII_ROW_SIZE(ASCII_ROW_SIZE),
     .N_COLOR_BITS(N_COLOR_BITS)
     ) 
 
@@ -88,6 +97,17 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
 
     assign s_background_color = sw[15:8];
 
-    assign s_PIXEL = 0;
+    /*
+    0000XX00
+    000XXXX0
+    00XX00XX
+    00XX00XX
+    00XXXXXX
+    00XX00XX
+    00XX00XX
+    00000000
+    */
+    assign s_PIXEL = {8'h0C, 8'h1E, 8'h33, 8'h33, 8'h3F, 8'h33, 8'h33, 8'h00};
+
 
 endmodule

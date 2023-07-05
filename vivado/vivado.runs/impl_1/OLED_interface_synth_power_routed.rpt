@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Tue Jul  4 17:18:34 2023
+| Date             : Tue Jul  4 22:45:21 2023
 | Host             : DESKTOP-SA1D2UB running 64-bit major release  (build 9200)
 | Command          : report_power -file OLED_interface_synth_power_routed.rpt -pb OLED_interface_synth_power_summary_routed.pb -rpx OLED_interface_synth_power_routed.rpx
 | Design           : OLED_interface_synth
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      461 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      185 |     20800 |            0.89 |
-|   Register     |    <0.001 |      185 |     41600 |            0.44 |
+| Slice Logic    |    <0.001 |      563 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      227 |     20800 |            1.09 |
 |   CARRY4       |    <0.001 |       27 |      8150 |            0.33 |
+|   Register     |    <0.001 |      228 |     41600 |            0.55 |
 |   Others       |     0.000 |       11 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |    <0.001 |      357 |       --- |             --- |
+| Signals        |    <0.001 |      422 |       --- |             --- |
 | I/O            |     0.002 |       38 |       106 |           35.85 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.075 |          |           |                 |
