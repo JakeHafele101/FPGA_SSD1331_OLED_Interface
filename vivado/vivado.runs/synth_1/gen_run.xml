@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688338222" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688509004" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp">
   <File Type="PA-TCL" Name="OLED_interface_synth.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="OLED_interface_synth_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="OLED_interface_synth_reports.tcl"/>
   <File Type="RDS-RDS" Name="OLED_interface_synth.vds"/>
   <File Type="RDS-UTIL" Name="OLED_interface_synth_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="OLED_interface_synth_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="OLED_interface_synth.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="OLED_interface_synth_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="OLED_interface_synth_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/Nbit_MOSI_SPI.v">

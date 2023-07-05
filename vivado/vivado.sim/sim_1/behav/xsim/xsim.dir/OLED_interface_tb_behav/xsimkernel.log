@@ -1,7 +1,4 @@
-Running: xsim.dir/OLED_interface_tb_behav/xsimk.exe -simmode gui -wdb OLED_interface_tb_behav.wdb -simrunnum 0 -socket 62981
+Running: xsim.dir/OLED_interface_tb_behav/xsimk.exe -simmode gui -wdb OLED_interface_tb_behav.wdb -simrunnum 0 -socket 56728
 Design successfully loaded
-Design Loading Memory Usage: 7196 KB (Peak: 7196 KB)
+Design Loading Memory Usage: 7224 KB (Peak: 7224 KB)
 Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 7868 KB (Peak: 7868 KB)
-Simulation CPU Usage: 30 ms

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Sun Jul  2 17:52:01 2023
+| Date         : Tue Jul  4 17:18:10 2023
 | Host         : DESKTOP-SA1D2UB running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file OLED_interface_synth_control_sets_placed.rpt
 | Design       : OLED_interface_synth
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    18 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    81 |
+| Unused register locations in slices containing registers |    79 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -44,8 +44,8 @@ Table of Contents
 | >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     1 |
-| >= 10 to < 12      |     3 |
-| >= 12 to < 14      |     2 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     3 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     3 |
 +--------------------+-------+
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               1 |            1 |
-| No           | No                    | Yes                    |              48 |           20 |
+| No           | No                    | Yes                    |              48 |           18 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               4 |            2 |
-| Yes          | No                    | Yes                    |             130 |           38 |
+| Yes          | No                    | Yes                    |             132 |           42 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,27 +70,27 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+---------------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
-|     Clock Signal     |                                              Enable Signal                                              | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------------+---------------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/o_READY_i_1_n_0                                                                        | btnC_IBUF        |                1 |              1 |         1.00 |
-| ~JC_OBUF_BUFG[3]     |                                                                                                         |                  |                1 |              1 |         1.00 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/o_RES_i_1_n_0                                                                          | btnC_IBUF        |                1 |              2 |         2.00 |
-| ~JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/o_DC0                                  | btnC_IBUF        |                1 |              2 |         2.00 |
-| ~JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/s_state_reg_reg_inv_0                  | btnC_IBUF        |                1 |              2 |         2.00 |
-| ~JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_START_reg_0                   | btnC_IBUF        |                1 |              2 |         2.00 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/o_VCCEN_i_1_n_0                                                                        | btnC_IBUF        |                2 |              4 |         2.00 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_DC_reg_0                      |                  |                2 |              4 |         2.00 |
-| ~JC_OBUF_BUFG[3]     |                                                                                                         | btnC_IBUF        |                3 |              4 |         1.33 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/s_BACKGROUND_COLOR_reg                                                                 | btnC_IBUF        |                3 |              8 |         2.67 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/E[0]                                   | btnC_IBUF        |                2 |             10 |         5.00 |
-|  JC_OBUF_BUFG[3]     |                                                                                                         | btnC_IBUF        |                8 |             11 |         1.38 |
-| ~JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/s_bit_reg                              | btnC_IBUF        |                3 |             11 |         3.67 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/FSM_sequential_s_state_reg_reg[2][0]   | btnC_IBUF        |                4 |             12 |         3.00 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_byte_reg[2]_i_1_n_0           | btnC_IBUF        |                4 |             12 |         3.00 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/s_count_reg[31]_i_1_n_0                                                                | btnC_IBUF        |               10 |             32 |         3.20 |
-|  JC_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/FSM_sequential_s_state_reg_reg[2]_0[0] | btnC_IBUF        |                5 |             32 |         6.40 |
-|  CLK100MHZ_IBUF_BUFG |                                                                                                         | btnC_IBUF        |                9 |             33 |         3.67 |
-+----------------------+---------------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
++----------------------+-------------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
+|     Clock Signal     |                                             Enable Signal                                             | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------+-------------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/o_READY_i_1_n_0                                                                      | btnC_IBUF        |                1 |              1 |         1.00 |
+| ~JA_OBUF_BUFG[3]     |                                                                                                       |                  |                1 |              1 |         1.00 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/o_RES_i_1_n_0                                                                        | btnC_IBUF        |                1 |              2 |         2.00 |
+| ~JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/o_DC0                                | btnC_IBUF        |                1 |              2 |         2.00 |
+| ~JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/s_state_reg_reg_inv_0                | btnC_IBUF        |                1 |              2 |         2.00 |
+| ~JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/o_START_reg_0                 | btnC_IBUF        |                1 |              2 |         2.00 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_DC_reg_0                    |                  |                2 |              4 |         2.00 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/o_VCCEN_i_1_n_0                                                                      | btnC_IBUF        |                3 |              4 |         1.33 |
+| ~JA_OBUF_BUFG[3]     |                                                                                                       | btnC_IBUF        |                2 |              4 |         2.00 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/s_BACKGROUND_COLOR_reg                                                               | btnC_IBUF        |                4 |              8 |         2.00 |
+|  JA_OBUF_BUFG[3]     |                                                                                                       | btnC_IBUF        |                7 |             11 |         1.57 |
+| ~JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/s_bit_reg                            | btnC_IBUF        |                4 |             11 |         2.75 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/FSM_sequential_s_state_reg_reg[1][0] | btnC_IBUF        |                3 |             12 |         4.00 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/E[0]                                 | btnC_IBUF        |                2 |             12 |         6.00 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI_Buffer/s_byte_reg[2]_i_1_n_0         | btnC_IBUF        |                2 |             12 |         6.00 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/g_Nbit_MOSI_SPI_Buffer_Combined/g_Nbit_MOSI_SPI/FSM_sequential_s_state_reg_reg[2][0] | btnC_IBUF        |                7 |             32 |         4.57 |
+|  JA_OBUF_BUFG[3]     | g_OLED_interface/s_count_reg[31]_i_1_n_0                                                              | btnC_IBUF        |               12 |             32 |         2.67 |
+|  CLK100MHZ_IBUF_BUFG |                                                                                                       | btnC_IBUF        |                9 |             33 |         3.67 |
++----------------------+-------------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
 
 

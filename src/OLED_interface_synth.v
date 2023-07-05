@@ -4,7 +4,7 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
                        input btnC, //reset
                        input btnU, btnD, //i_START
                        output [15:0] LED, //indicators for outputs to PMOD
-                       output [7:0] JC //OLED PMOD Port
+                       output [7:0] JA //OLED PMOD Port
                        );
     
     parameter WIDTH        = 8; //# of serial bits to transmit over MOSI, loaded from i_DATA
@@ -14,9 +14,9 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     parameter WAIT_3_US = 20; 
     parameter WAIT_100_MS = 600000;
 
-    parameter NUM_COL = 96; //# of columns in OLED array
-    parameter NUM_ROW = 3; //# of rows in OLED array
-    
+    parameter NUM_COL = 8; //# of columns in OLED array
+    parameter NUM_ROW = 8; //# of rows in OLED array
+
     parameter N_COLOR_BITS = 8;
 
     //Wires to inputs
@@ -77,14 +77,14 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
 
     assign LED[9:2] = {s_PMODEN, s_VCCEN, s_RES, s_DC, s_SCK, s_MOSI, s_CS, s_READY};
 
-    assign JC[0] = s_CS; //P18
-    assign JC[1] = s_MOSI; //M18
-    assign JC[2] = 1'b0; //N17, NO CONNECT
-    assign JC[3] = s_SCK; //P18
-    assign JC[4] = s_DC; //L17
-    assign JC[5] = s_RES; //M19
-    assign JC[6] = s_VCCEN; //P17
-    assign JC[7] = s_PMODEN; //R18
+    assign JA[0] = s_CS; //P18
+    assign JA[1] = s_MOSI; //M18
+    assign JA[2] = 1'b0; //N17, NO CONNECT
+    assign JA[3] = s_SCK; //P18
+    assign JA[4] = s_DC; //L17
+    assign JA[5] = s_RES; //M19
+    assign JA[6] = s_VCCEN; //P17
+    assign JA[7] = s_PMODEN; //R18
 
     assign s_background_color = sw[15:8];
 

@@ -25,14 +25,17 @@ module OLED_interface_tb();
     parameter T = 2;
     
     parameter WIDTH        = 8; //# of serial bits to transmit over MOSI, loaded from i_DATA
-    parameter N            = 8; //# of serial bits to transmit over MOSI, loaded from i_DATA
+    parameter N            = 8; //# of bytes that can be loaded at once for MOSI. NO LOWER THAN 6
     parameter SCLK_DIVIDER = 1; //divide clock by 1
     
     parameter WAIT_3_US = 2; 
     parameter WAIT_100_MS = 10; 
 
-    parameter NUM_COL = 2; //# of columns in OLED array
-    parameter NUM_ROW = 2; //# of rows in OLED array
+    parameter NUM_COL = 4; //# of columns in OLED array
+    parameter NUM_ROW = 4; //# of rows in OLED array
+
+    parameter ASCII_COL_SIZE = 2; //# of horizontal bits in ASCII char
+    parameter ASCII_ROW_SIZE = 2; //# of vertical bits in ASCII char
     
     parameter N_COLOR_BITS = 8;
     
@@ -41,7 +44,7 @@ module OLED_interface_tb();
     reg [1:0] i_MODE;
     reg [N_COLOR_BITS-1:0] i_TEXT_COLOR;
     reg [N_COLOR_BITS-1:0] i_BACKGROUND_COLOR;
-    reg [NUM_COL*NUM_ROW - 1:0] i_PIXEL;       //1 if text color, 0 if background color
+    reg [ASCII_COL_SIZE*ASCII_ROW_SIZE - 1:0] i_PIXEL;       //1 if text color, 0 if background color
             
     //Outputs from MOSI SPI
     wire o_READY, o_CS, o_MOSI, o_SCK, o_DC, o_RES, o_VCCEN, o_PMODEN, o_MOSI_FINAL_BIT, o_MOSI_FINAL_BYTE;
@@ -54,6 +57,8 @@ module OLED_interface_tb();
     .WAIT_100_MS(WAIT_100_MS),
     .NUM_COL(NUM_COL),
     .NUM_ROW(NUM_ROW),
+    .ASCII_COL_SIZE(ASCII_COL_SIZE),
+    .ASCII_ROW_SIZE(ASCII_ROW_SIZE),
     .N_COLOR_BITS(N_COLOR_BITS)
     )
 
@@ -96,8 +101,6 @@ module OLED_interface_tb();
         repeat(100) @(negedge i_CLK);
 
         pixel_display(4'b1010); //text, bg, text, bg
-        pixel_display(4'b1010); //text, bg, text, bg
-
         repeat(100) @(negedge i_CLK);
 
         $stop;
@@ -127,7 +130,7 @@ module OLED_interface_tb();
         end
     endtask
 
-    task pixel_display(input [NUM_COL*NUM_ROW - 1:0] i_PIXEL_task);
+    task pixel_display(input [ASCII_COL_SIZE*ASCII_ROW_SIZE - 1:0] i_PIXEL_task);
         begin
             i_MODE = 2'b10;
             i_PIXEL = i_PIXEL_task;
