@@ -95,6 +95,7 @@ read_verilog -library xil_defaultlib {
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/Nbit_MOSI_SPI_Buffer_Combined.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v
+  C:/Projects/FPGA_SSD1331_OLED_Interface/src/ascii_font_8x8.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/button_tick_latch.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v
   C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface_synth.v

@@ -36,6 +36,9 @@ module OLED_interface_tb();
 
     parameter ASCII_COL_SIZE = 2; //# of horizontal bits in ASCII char
     parameter ASCII_ROW_SIZE = 2; //# of vertical bits in ASCII char
+
+    parameter NUM_ASCII_COL  = NUM_COL / ASCII_COL_SIZE; //# of cols of ASCII chars (12 Default)
+    parameter NUM_ASCII_ROW  = NUM_ROW / ASCII_ROW_SIZE; //# of rows of ASCII chars (8 Default)
     
     parameter N_COLOR_BITS = 8;
     
@@ -44,7 +47,7 @@ module OLED_interface_tb();
     reg [1:0] i_MODE;
     reg [N_COLOR_BITS-1:0] i_TEXT_COLOR;
     reg [N_COLOR_BITS-1:0] i_BACKGROUND_COLOR;
-    reg [ASCII_COL_SIZE*ASCII_ROW_SIZE - 1:0] i_PIXEL;       //1 if text color, 0 if background color
+    reg [NUM_ASCII_COL * NUM_ASCII_ROW * 8 - 1:0] i_ASCII;       //1 if text color, 0 if background color
             
     //Outputs from MOSI SPI
     wire o_READY, o_CS, o_MOSI, o_SCK, o_DC, o_RES, o_VCCEN, o_PMODEN, o_MOSI_FINAL_BIT, o_MOSI_FINAL_BYTE;
@@ -68,7 +71,7 @@ module OLED_interface_tb();
     .i_START(i_START),
     .i_TEXT_COLOR(i_TEXT_COLOR),
     .i_BACKGROUND_COLOR(i_BACKGROUND_COLOR),
-    .i_PIXEL(i_PIXEL),
+    .i_ASCII(i_ASCII),
     .o_READY(o_READY),
     .o_CS(o_CS),
     .o_MOSI(o_MOSI),
@@ -100,7 +103,7 @@ module OLED_interface_tb();
 
         repeat(100) @(negedge i_CLK);
 
-        pixel_display(4'b1010); //text, bg, text, bg
+        ascii_display(32'h30313233); //0 1 2 3
         repeat(100) @(negedge i_CLK);
 
         $stop;
@@ -111,7 +114,7 @@ module OLED_interface_tb();
             i_MODE = 2'b00;
             i_START = 1'b0;
             i_RST = 1'b1;
-            i_PIXEL = 0;
+            i_ASCII = 0;
             i_TEXT_COLOR = 8'h00;
             i_BACKGROUND_COLOR = 8'hFF;
             @(negedge i_CLK);
@@ -130,10 +133,10 @@ module OLED_interface_tb();
         end
     endtask
 
-    task pixel_display(input [ASCII_COL_SIZE*ASCII_ROW_SIZE - 1:0] i_PIXEL_task);
+    task ascii_display(input [NUM_ASCII_COL * NUM_ASCII_ROW * 8 - 1:0] i_ASCII_task);
         begin
             i_MODE = 2'b10;
-            i_PIXEL = i_PIXEL_task;
+            i_ASCII = i_ASCII_task;
             @(negedge i_CLK);
             i_START = 1'b1;
             @(negedge o_READY);

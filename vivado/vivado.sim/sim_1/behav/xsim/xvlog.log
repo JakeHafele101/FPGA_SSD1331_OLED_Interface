@@ -15,7 +15,9 @@ INFO: [VRFC 10-311] analyzing module SSD1331_defines
 INFO: [VRFC 10-311] analyzing module OLED_interface
 WARNING: [VRFC 10-3380] identifier 'N_COLOR_BITS' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:8]
 WARNING: [VRFC 10-3380] identifier 'N_COLOR_BITS' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:9]
-WARNING: [VRFC 10-3380] identifier 'ASCII_COL_SIZE' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:10]
+WARNING: [VRFC 10-3380] identifier 'NUM_ASCII_COL' is used before its declaration [C:/Projects/FPGA_SSD1331_OLED_Interface/src/OLED_interface.v:10]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/ascii_font_8x8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ascii_font_8x8
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/clock_divider.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clock_divider
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/FPGA_SSD1331_OLED_Interface/src/test/OLED_interface_tb.v" into library xil_defaultlib

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688528611">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688694289">
   <File Type="ROUTE-PWR" Name="OLED_interface_synth_power_routed.rpt"/>
   <File Type="PA-TCL" Name="OLED_interface_synth.tcl"/>
   <File Type="BITSTR-MMI" Name="OLED_interface_synth.mmi"/>
@@ -110,6 +110,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/OLED_interface.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/ascii_font_8x8.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688528611" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688694289" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Nbit_MOSI_SPI_Buffer.dcp">
   <File Type="PA-TCL" Name="OLED_interface_synth.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="OLED_interface_synth_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="OLED_interface_synth_reports.tcl"/>
@@ -40,6 +40,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/OLED_interface.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/ascii_font_8x8.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

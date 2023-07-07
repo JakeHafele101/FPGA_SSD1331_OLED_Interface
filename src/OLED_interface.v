@@ -7,14 +7,14 @@ module OLED_interface (input i_CLK,
                        input i_START,
                        input [N_COLOR_BITS-1:0] i_TEXT_COLOR,
                        input [N_COLOR_BITS-1:0] i_BACKGROUND_COLOR,
-                       input [ASCII_COL_SIZE * ASCII_ROW_SIZE - 1:0] i_PIXEL, //1 if text color, 0 if background color
-                       output reg o_READY,                                    //ready to take in i_MODE and i_START for command
+                       input [NUM_ASCII_COL * NUM_ASCII_ROW * 8 - 1:0] i_ASCII, //ASCII bytes with top left MSB, bottom right LSB
+                       output reg o_READY,                                      //ready to take in i_MODE and i_START for command
                        output o_CS,
                        output o_MOSI,
                        output o_SCK,
                        output o_DC,
-                       output reg o_RES,                                      //OLED power reset, active low reset
-                       output reg o_VCCEN,                                    //VCC enable, active high drives VCC
+                       output reg o_RES,                                        //OLED power reset, active low reset
+                       output reg o_VCCEN,                                      //VCC enable, active high drives VCC
                        output reg o_PMODEN,
                        output o_MOSI_FINAL_BIT,
                        output o_MOSI_FINAL_BYTE);
@@ -30,7 +30,7 @@ module OLED_interface (input i_CLK,
     
     parameter [31:0] NUM_COL = 96; //# of columns in OLED array
     parameter [31:0] NUM_ROW = 64; //# of rows in OLED array
-        
+    
     parameter [7:0] ASCII_COL_SIZE = 8; //Number of x bits of ASCII char
     parameter [7:0] ASCII_ROW_SIZE = 8; //number of y bits of ASCII char
     parameter [7:0] NUM_ASCII_COL  = NUM_COL / ASCII_COL_SIZE; //# of cols of ASCII chars (12 Default)
@@ -63,12 +63,17 @@ module OLED_interface (input i_CLK,
     
     
     //Pixel internal
-    reg [31:0] s_PIXEL_COUNT_reg; //counter for what pixel displayed
+    reg [7:0] s_PIXEL_COUNT_reg; //counter for what pixel displayed
     reg [7:0] s_ASCII_col_reg;
     reg [7:0] s_ASCII_row_reg;
-
+    
     wire [7:0] s_ASCII_first_col, s_ASCII_last_col;
     wire [7:0] s_ASCII_first_row, s_ASCII_last_row;
+    
+    reg [NUM_ASCII_COL * NUM_ASCII_ROW * 8 - 1:0] s_ASCII; //saves ASCII chars to display
+    
+    wire [7:0] s_ASCII_current; //current ASCII to be converted and displayed
+    wire [ASCII_COL_SIZE*ASCII_ROW_SIZE - 1:0] s_ASCII_PIXEL; //ASCII char converted to pixels to display
     
     //Buffer module internal signals
     wire s_SCK;
@@ -101,13 +106,19 @@ module OLED_interface (input i_CLK,
     .i_EN(1'b1), //always enabled
     .o_CLK_DIV(s_SCK)
     );
-
+    
+    ascii_font_8x8 font(
+    .i_ASCII(s_ASCII_current), //8 bit ASCII input
+    .o_PIXEL(s_ASCII_PIXEL) //8x8 bit pixel array, MSB top left pixel, LSB bottom right pixel, row by row
+    );
+    
     //Datapath for start/end row/col headers based on ASCII value
     assign s_ASCII_first_col = s_ASCII_col_reg * 8;
-    assign s_ASCII_last_col = s_ASCII_col_reg*8 + 7;
+    assign s_ASCII_last_col  = s_ASCII_col_reg*8 + 7;
     assign s_ASCII_first_row = s_ASCII_row_reg*8;
-    assign s_ASCII_last_row = s_ASCII_row_reg*8 + 7;
-
+    assign s_ASCII_last_row  = s_ASCII_row_reg*8 + 7;
+    
+    assign s_ASCII_current = s_ASCII[NUM_ASCII_COL * NUM_ASCII_ROW * 8 - 1 : NUM_ASCII_COL * NUM_ASCII_ROW * 8 - 8];
     
     always @(posedge s_SCK, posedge i_RST)
         if (i_RST)
@@ -122,6 +133,7 @@ module OLED_interface (input i_CLK,
             s_PIXEL_COUNT_reg      <= 0;
             s_ASCII_col_reg        <= 0;
             s_ASCII_row_reg        <= 0;
+            s_ASCII                <= 0;
             s_TEXT_COLOR_reg       <= 0;
             s_BACKGROUND_COLOR_reg <= 0;
             o_RES                  <= 1'b1;
@@ -171,6 +183,7 @@ module OLED_interface (input i_CLK,
                         s_PIXEL_COUNT_reg      <= 0;
                         s_ASCII_col_reg        <= 0;
                         s_ASCII_row_reg        <= 0;
+                        s_ASCII                <= i_ASCII;
                     end
                 endcase
             end
@@ -254,49 +267,51 @@ module OLED_interface (input i_CLK,
             
             s_state_reg       <= pixel_display_2;
             s_PIXEL_COUNT_reg <= 0; //reset ASCII pixel count to 0
+            
         end
         
         pixel_display_2: //Send 1 pixel at a time
         begin
             if (s_MOSI_FINAL_BYTE == 1'b1 && s_MOSI_FINAL_BIT == 1'b1) //If transmitting second to last bit and last byte, check to transmit again
+            begin
+                
+                if (s_PIXEL_COUNT_reg >= ASCII_COL_SIZE * ASCII_ROW_SIZE) //If transmitted all bytes in ASCII char
                 begin
-            
-                    if (s_PIXEL_COUNT_reg >= ASCII_COL_SIZE * ASCII_ROW_SIZE) //If transmitted all bytes in ASCII char
+                    if ((s_ASCII_row_reg >= NUM_ASCII_ROW - 1) && (s_ASCII_col_reg >= NUM_ASCII_COL - 1)) //if sent all bytes in ASCII, leave
                     begin
-                        if ((s_ASCII_row_reg >= NUM_ASCII_ROW - 1) && (s_ASCII_col_reg >= NUM_ASCII_COL - 1)) //if sent all bytes in ASCII, leave
-                        begin
-                            s_state_reg <= idle;
-                        end
-                        else if (s_ASCII_col_reg >= NUM_ASCII_COL - 1) //If on last col ASCII, set to col 0 and increment row
-                        begin
-                            s_ASCII_col_reg <= 0;
-                            s_ASCII_row_reg <= s_ASCII_row_reg + 1;
-                            s_state_reg <= pixel_display_1; //reset start/end row/column addresses~
-                        end
-                        else //Otherwise, stay in same row and increment col
-                        begin
-                            s_ASCII_col_reg <= s_ASCII_col_reg + 1;
-                            s_state_reg <= pixel_display_1; //reset start/end row/column addresses
-                        end
-                        
-                        s_buffer_start_reg <= 1'b0;
+                        s_state_reg <= idle;
                     end
-                    else
+                    else if (s_ASCII_col_reg >= NUM_ASCII_COL - 1) //If on last col ASCII, set to col 0 and increment row
                     begin
-                        //Choose color to send
-                        if (i_PIXEL[ASCII_COL_SIZE * ASCII_ROW_SIZE - 1 - s_PIXEL_COUNT_reg] == 1'b0)  //send background color
-                            s_DATA[WIDTH-1:0] <= s_BACKGROUND_COLOR_reg; //Send white pixel
-                        else  //send text color
-                            s_DATA[WIDTH-1:0] <= s_TEXT_COLOR_reg; //Send white pixel
-                        
-                        s_DC[0]            <= 1'b1; //Data 1, command 0
-                        s_N_transmit       <= 1; //transmit 1 bytes
-
-                        s_PIXEL_COUNT_reg <= s_PIXEL_COUNT_reg + 1;
-
-                        s_buffer_start_reg <= 1'b1;   
+                        s_ASCII_col_reg <= 0;
+                        s_ASCII_row_reg <= s_ASCII_row_reg + 1;
+                        s_state_reg     <= pixel_display_1; //reset start/end row/column addresses~
                     end
+                    else //Otherwise, stay in same row and increment col
+                    begin
+                        s_ASCII_col_reg <= s_ASCII_col_reg + 1;
+                        s_state_reg     <= pixel_display_1; //reset start/end row/column addresses
+                    end
+                    
+                    s_ASCII <= s_ASCII << 8; //shift left 8 so next ASCII byte can be read
+                    s_buffer_start_reg <= 1'b0;
                 end
+                else
+                begin
+                    //Choose color to send
+                    if (s_ASCII_PIXEL[ASCII_COL_SIZE * ASCII_ROW_SIZE - 1 - s_PIXEL_COUNT_reg] == 1'b0)  //send background color
+                        s_DATA[WIDTH-1:0] <= s_BACKGROUND_COLOR_reg; //Send white pixel
+                    else  //send text color
+                        s_DATA[WIDTH-1:0] <= s_TEXT_COLOR_reg; //Send white pixel
+                    
+                    s_DC[0]      <= 1'b1; //Data 1, command 0
+                    s_N_transmit <= 1; //transmit 1 bytes
+                    
+                    s_PIXEL_COUNT_reg <= s_PIXEL_COUNT_reg + 1;
+                    
+                    s_buffer_start_reg <= 1'b1;
+                end
+            end
             else
                 s_buffer_start_reg <= 1'b0;
         end

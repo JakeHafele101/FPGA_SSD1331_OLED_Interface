@@ -17,8 +17,8 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     parameter NUM_COL = 96; //# of columns in OLED array
     parameter NUM_ROW = 64; //# of rows in OLED array
 
-    // parameter NUM_COL = 8; //# of columns in OLED array
-    // parameter NUM_ROW = 8; //# of rows in OLED array
+    parameter NUM_ASCII_COL  = NUM_COL / ASCII_COL_SIZE; //# of cols of ASCII chars (12 Default)
+    parameter NUM_ASCII_ROW  = NUM_ROW / ASCII_ROW_SIZE; //# of rows of ASCII chars (8 Default)
 
     parameter ASCII_COL_SIZE = 8; //Number of x bits of ASCII char
     parameter ASCII_ROW_SIZE = 8; //Number of y bits of ASCII char
@@ -35,7 +35,7 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
 
     wire [WIDTH-1:0] s_background_color;
 
-    wire [ASCII_COL_SIZE * ASCII_ROW_SIZE - 1:0] s_PIXEL;
+    wire [NUM_ASCII_COL * NUM_ASCII_ROW * 8 - 1:0] s_ASCII;
 
     OLED_interface 
     #(.WIDTH(WIDTH), 
@@ -57,7 +57,7 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     .i_START(s_START),
     .i_TEXT_COLOR(8'hFF),
     .i_BACKGROUND_COLOR(s_background_color),
-    .i_PIXEL(s_PIXEL), 
+    .i_ASCII(s_ASCII), 
     .o_READY(s_READY),
     .o_CS(s_CS),
     .o_MOSI(s_MOSI),
@@ -97,17 +97,7 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
 
     assign s_background_color = sw[15:8];
 
-    /*
-    0000XX00
-    000XXXX0
-    00XX00XX
-    00XX00XX
-    00XXXXXX
-    00XX00XX
-    00XX00XX
-    00000000
-    */
-    assign s_PIXEL = {8'h0C, 8'h1E, 8'h33, 8'h33, 8'h3F, 8'h33, 8'h33, 8'h00};
-
+    //12 col, 8 row, 8 byte per ASCII
+    assign s_ASCII = {"    JAKE    ", "     IS     ", "    GOOD    ", "     AT     ", "   WRITING  ", "   VERILOG  ", "     FOR    ", "    FPGAS   "};
 
 endmodule

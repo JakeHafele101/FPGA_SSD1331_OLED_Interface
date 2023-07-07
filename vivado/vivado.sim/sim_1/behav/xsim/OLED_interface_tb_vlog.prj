@@ -4,6 +4,7 @@ verilog xil_defaultlib  --include "../../../../../src" \
 "../../../../../src/Nbit_MOSI_SPI_Buffer.v" \
 "../../../../../src/Nbit_MOSI_SPI_Buffer_Combined.v" \
 "../../../../../src/OLED_interface.v" \
+"../../../../../src/ascii_font_8x8.v" \
 "../../../../../src/clock_divider.v" \
 "../../../../../src/test/OLED_interface_tb.v" \
 
