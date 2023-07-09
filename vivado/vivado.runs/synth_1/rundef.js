@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log OLED_interface_synth.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source OLED_interface_synth.tcl" );
+         "-log OLED_timer_synth.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source OLED_timer_synth.tcl" );
 
 
 

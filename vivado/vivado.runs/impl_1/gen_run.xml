@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688694289">
-  <File Type="ROUTE-PWR" Name="OLED_interface_synth_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="OLED_interface_synth.tcl"/>
-  <File Type="BITSTR-MMI" Name="OLED_interface_synth.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="OLED_interface_synth_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="OLED_interface_synth_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="OLED_interface_synth_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="OLED_interface_synth_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="OLED_interface_synth_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="OLED_interface_synth_opt.dcp"/>
-  <File Type="OPT-DRC" Name="OLED_interface_synth_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="OLED_interface_synth.hwdef"/>
-  <File Type="PWROPT-DCP" Name="OLED_interface_synth_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="OLED_interface_synth_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="OLED_interface_synth_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="OLED_interface_synth_placed.dcp"/>
-  <File Type="PLACE-IO" Name="OLED_interface_synth_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="OLED_interface_synth_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="OLED_interface_synth_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="OLED_interface_synth_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="OLED_interface_synth_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="OLED_interface_synth_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="OLED_interface_synth_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="OLED_interface_synth.bin"/>
-  <File Type="PLACE-TIMING" Name="OLED_interface_synth_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="OLED_interface_synth_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="OLED_interface_synth.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="OLED_interface_synth_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="OLED_interface_synth_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="OLED_interface_synth_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="OLED_interface_synth.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="OLED_interface_synth_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="OLED_interface_synth_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="OLED_interface_synth_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="OLED_interface_synth_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="OLED_interface_synth_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="OLED_interface_synth_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="OLED_interface_synth_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="OLED_interface_synth_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="OLED_interface_synth_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="OLED_interface_synth_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="OLED_interface_synth_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="OLED_interface_synth_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="OLED_interface_synth_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="OLED_interface_synth_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="OLED_interface_synth_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="OLED_interface_synth_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="OLED_interface_synth_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="OLED_interface_synth_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="OLED_interface_synth_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="OLED_interface_synth_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="OLED_interface_synth_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="OLED_interface_synth_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="OLED_interface_synth_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="OLED_interface_synth_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="OLED_interface_synth_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="OLED_interface_synth_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="OLED_interface_synth_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="OLED_interface_synth.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="OLED_interface_synth_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="OLED_interface_synth_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="OLED_interface_synth.nky"/>
-  <File Type="BITSTR-BMM" Name="OLED_interface_synth_bd.bmm"/>
-  <File Type="PDI-FILE" Name="OLED_interface_synth.pdi"/>
-  <File Type="RCFI_FILE" Name="OLED_interface_synth.rcfi"/>
-  <File Type="CFI_FILE" Name="OLED_interface_synth.cfi"/>
-  <File Type="RNPI_FILE" Name="OLED_interface_synth.rnpi"/>
-  <File Type="NPI_FILE" Name="OLED_interface_synth.npi"/>
-  <File Type="RBD_FILE" Name="OLED_interface_synth.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1688936226">
+  <File Type="ROUTE-PWR" Name="OLED_timer_synth_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="OLED_timer_synth.tcl"/>
+  <File Type="BITSTR-MMI" Name="OLED_timer_synth.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="OLED_timer_synth_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="OLED_timer_synth_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="OLED_timer_synth_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="OLED_timer_synth_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="OLED_timer_synth_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="OLED_timer_synth_opt.dcp"/>
+  <File Type="OPT-DRC" Name="OLED_timer_synth_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="OLED_timer_synth.hwdef"/>
+  <File Type="PWROPT-DCP" Name="OLED_timer_synth_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="OLED_timer_synth_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="OLED_timer_synth_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="OLED_timer_synth_placed.dcp"/>
+  <File Type="PLACE-IO" Name="OLED_timer_synth_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="OLED_timer_synth_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="OLED_timer_synth_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="OLED_timer_synth_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="OLED_timer_synth_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="OLED_timer_synth_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="OLED_timer_synth_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="OLED_timer_synth.bin"/>
+  <File Type="PLACE-TIMING" Name="OLED_timer_synth_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="OLED_timer_synth_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="OLED_timer_synth.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="OLED_timer_synth_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="OLED_timer_synth_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="OLED_timer_synth_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="OLED_timer_synth.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="OLED_timer_synth_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="OLED_timer_synth_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="OLED_timer_synth_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="OLED_timer_synth_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="OLED_timer_synth_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="OLED_timer_synth_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="OLED_timer_synth_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="OLED_timer_synth_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="OLED_timer_synth_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="OLED_timer_synth_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="OLED_timer_synth_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="OLED_timer_synth_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="OLED_timer_synth_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="OLED_timer_synth_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="OLED_timer_synth_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="OLED_timer_synth_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="OLED_timer_synth_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="OLED_timer_synth_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="OLED_timer_synth_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="OLED_timer_synth_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="OLED_timer_synth_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="OLED_timer_synth_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="OLED_timer_synth_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="OLED_timer_synth_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="OLED_timer_synth_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="OLED_timer_synth_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="OLED_timer_synth_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="OLED_timer_synth.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="OLED_timer_synth_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="OLED_timer_synth_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="OLED_timer_synth.nky"/>
+  <File Type="BITSTR-BMM" Name="OLED_timer_synth_bd.bmm"/>
+  <File Type="PDI-FILE" Name="OLED_timer_synth.pdi"/>
+  <File Type="RCFI_FILE" Name="OLED_timer_synth.rcfi"/>
+  <File Type="CFI_FILE" Name="OLED_timer_synth.cfi"/>
+  <File Type="RNPI_FILE" Name="OLED_timer_synth.rnpi"/>
+  <File Type="NPI_FILE" Name="OLED_timer_synth.npi"/>
+  <File Type="RBD_FILE" Name="OLED_timer_synth.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="OLED_interface_synth.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="OLED_interface_synth.sysdef"/>
-  <File Type="BG-BGN" Name="OLED_interface_synth.bgn"/>
-  <File Type="BG-DRC" Name="OLED_interface_synth.drc"/>
-  <File Type="RDI-RDI" Name="OLED_interface_synth.vdi"/>
+  <File Type="BITSTR-LTX" Name="OLED_timer_synth.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="OLED_timer_synth.sysdef"/>
+  <File Type="BG-BGN" Name="OLED_timer_synth.bgn"/>
+  <File Type="BG-DRC" Name="OLED_timer_synth.drc"/>
+  <File Type="RDI-RDI" Name="OLED_timer_synth.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="OLED_interface_synth_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="OLED_interface_synth_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="OLED_timer_synth_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="OLED_timer_synth_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
@@ -123,13 +123,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/button_tick_latch.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../src/clock_divider.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -137,8 +130,52 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../src/reaction_timer/debounce_FSMD.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/reaction_timer/hex_to_ASCII.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/reaction_timer/reaction_timer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/reaction_timer/reaction_timer_ASCII.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/reaction_timer/OLED_timer_synth.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/button_tick_latch.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../src/OLED_interface_synth.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -154,8 +191,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="OLED_interface_synth"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="OLED_timer_synth"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

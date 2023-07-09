@@ -6,4 +6,4 @@ REM          to be invoked for Vivado to track run status.
 REM Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 REM
 
-vivado -log OLED_interface_synth.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source OLED_interface_synth.tcl
+vivado -log OLED_timer_synth.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source OLED_timer_synth.tcl

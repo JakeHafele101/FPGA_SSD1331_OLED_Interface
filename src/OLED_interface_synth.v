@@ -72,7 +72,7 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     (.i_CLK(s_SCK),
     .i_RST(btnC),
     .i_BTN(btnU),
-    .i_TICK(s_TICK)
+    .o_TICK(s_TICK)
     );
 
     assign s_START = s_TICK | btnD;
@@ -98,6 +98,12 @@ module OLED_interface_synth (input CLK100MHZ, //100MHz clock, stepped down to 5M
     assign s_background_color = sw[15:8];
 
     //12 col, 8 row, 8 byte per ASCII
-    assign s_ASCII = {"    JAKE    ", "     IS     ", "    GOOD    ", "     AT     ", "   WRITING  ", "   VERILOG  ", "     FOR    ", "    FPGAS   "};
-
+    assign s_ASCII = {"    JAKE    ",
+                      "     IS     ",
+                      "    GOOD    ", 
+                      "     AT     ", 
+                      "   WRITING  ", 
+                      "   VERILOG  ", 
+                      "     FOR    ", 
+                      "    FPGAS   "};
 endmodule

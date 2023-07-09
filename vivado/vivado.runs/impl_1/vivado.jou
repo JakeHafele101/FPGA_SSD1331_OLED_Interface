@@ -2,12 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu Jul  6 20:47:23 2023
-# Process ID: 22232
+# Start of session at: Sun Jul  9 16:00:01 2023
+# Process ID: 13200
 # Current directory: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/impl_1
-# Command line: vivado.exe -log OLED_interface_synth.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source OLED_interface_synth.tcl -notrace
-# Log file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/impl_1/OLED_interface_synth.vdi
+# Command line: vivado.exe -log OLED_timer_synth.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source OLED_timer_synth.tcl -notrace
+# Log file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/impl_1/OLED_timer_synth.vdi
 # Journal file: C:/Projects/FPGA_SSD1331_OLED_Interface/vivado/vivado.runs/impl_1\vivado.jou
 # Running On: DESKTOP-SA1D2UB, OS: Windows, CPU Frequency: 3991 MHz, CPU Physical cores: 4, Host memory: 17058 MB
 #-----------------------------------------------------------
-source OLED_interface_synth.tcl -notrace
+source OLED_timer_synth.tcl -notrace

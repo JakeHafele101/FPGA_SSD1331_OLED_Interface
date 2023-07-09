@@ -23,7 +23,7 @@
 module button_tick_latch(input i_CLK,
                          input i_RST,
                          input i_BTN,
-                         output reg i_TICK);
+                         output reg o_TICK);
     
     //assigns state names to bit values for case statement
     localparam [1:0] zero = 2'b00,
@@ -42,18 +42,18 @@ module button_tick_latch(input i_CLK,
     //Next state logic and output logic
     always @*
     begin
-    i_TICK     = 1'b0;  //default off since rising/falling edge will happen less often
+    o_TICK     = 1'b0;  //default off since rising/falling edge will happen less often
     state_next = state_reg;
     case(state_reg)
         zero:
         if (i_BTN)
         begin
-            i_TICK     = 1'b1;
+            o_TICK     = 1'b1;
             state_next = hold;
         end
         hold:
         begin
-            i_TICK     = 1'b0;
+            o_TICK     = 1'b0;
             state_next = one;
         end
         one:

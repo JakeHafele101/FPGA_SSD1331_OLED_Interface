@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .write_bitstream.begin.rst
-EAStep vivado -log OLED_interface_synth.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source OLED_interface_synth.tcl -notrace
+EAStep vivado -log OLED_timer_synth.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source OLED_timer_synth.tcl -notrace
 
 
